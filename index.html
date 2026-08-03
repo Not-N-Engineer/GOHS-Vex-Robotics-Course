@@ -1,108 +1,79 @@
-<!DOCTYPE HTML>
-<html>
-    <head>
-        <title>Github Website Test</title>
-        <meta charset="utf-8">
-        <style>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+<body>
 
-            h2 {
-                color: rgb(66, 27, 27);
-            }
+<div class="binder">
 
-            .goofyText {
-                color: rgb(198, 14, 161);
-            }
+  <aside>
+    <p class="imprint">Great Oak Vex Robotics Team - By Yujie Jin</p>
+    <h2 class="course-title">Vex Robotics Course</h2>
 
-            #numbered-list {
-                color: rgb(198, 14, 161);
-            }
-
-            body {
-                background-color: rgb(189, 215, 246);
-            }
-
-        </style>
-    </head>
-
-    <body>
-        <!-- Heading Section -->
-        <h1>
-            Heading
-        </h1>
-
-        <p> 
-            This is text. <br>
-            More text. <br>
-            <em>Italicized text.</em> <br>
-            <strong> <em>Bold</em> text.</strong> <br>
-        </p>
-
-
-        <!-- Introduction Stuff Section -->
-        <h2 class="goofyText">
-            Stuff
-        </h2>
-
-        <ul>
-            <li> This website will be used for the course materials for the gohs vex robotics team. </li>
-            <li> What is <a href="#vex-explanation-section">Vex Robotics</a>, you ask?</li>
-        </ul>
-
-        <ol id="numbered-list">
-            <li> Numbered list? </li>
+    <nav aria-label="Course modules">
+      <div class="module">
+        <p class="module-label">Module 1 · Introduction to Vex</p>
+        <ol>
+          <li><a href="lesson1-1.html">1.1 What is Vex Robotics?</a></li>
+          <li><a href="lesson1-2.html">1.2 How this club will work</a></li>
         </ol>
+      </div>
 
+      <div class="module">
+        <p class="module-label">Module 2 · Coding</p>
+        <ol>
+          <li><a href="lesson2-1.html">2.1 What is coding for Vex?</a></li>
+          <li><a href="lesson2-2.html">2.2 Introduction to Python</a></li>
+        </ol>
+      </div>
 
-        <!-- What is Vex Section -->
-        <h2>
-            What is Vex?
-        </h2>
+      <div class="module">
+        <p class="module-label">Module 3 · Cadding</p>
+        <ol>
+          <li><a href="lesson3-1.html">3.1 What is cadding for Vex?</a></li>
+          <li><a href="lesson3-2.html">3.2 Onshape</a></li>
+        </ol>
+      </div>
 
-        <img 
-            src="https://upload.wikimedia.org/wikipedia/commons/3/38/Vex-Logo.jpg" 
-            alt="Vex Robotics Logo"
-            width="250">
+      <div class="module">
+        <p class="module-label">Module 4 · Noting</p>
+        <ol>
+          <li><a href="lesson4-1.html">4.1 What is Noting and why do we do it?</a></li>
+          <li><a href="lesson4-2.html">4.2 Your first engineering notebook</a></li>
+        </ol>
+      </div>
+    </nav>
 
-        <p class="goofyText"> 
-            Vex is a robotics competition. <br>
-            <a target="_blank" href="https://events.vex.com/robot-competitions/vex-robotics-competition"> Read more about vex here. </a>
-        </p>
+    <a class="back-link" href="index.html">↩ Course overview</a>
+  </aside>
 
+  <div class="spine" aria-hidden="true"></div>
 
-        <!-- DINNER -->
-        <h2>
-            Dinner
-        </h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Dinner?</th>
-                    <th>Dinner</th>
-                    <th>Dinner!</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>3</td>
-                    <td>2</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>3</td>
-                    <td>6</td>
-                </tr>
-                <tr>
-                    <td>15</td>
-                    <td>5</td>
-                    <td>120</td>
-                </tr>
-                <tr>
-                    <td>28</td>
-                    <td>?</td>
-                    <td>?</td>
-                </tr>
-            </tbody>
-        </table>
-    </body>
+  <main>
+    <p class="eyebrow">Home Page</p>
+    <h1> Welcome to this course. </h1>
+
+    <p>Hello, if you are on this web page, I'm assuming that you just joined the Great Oak Vex Robotics Team.</p>
+
+    <p>This website was created to host the course to teach you the basics of Vex Robotics if you didn't already know them. I hope you have fun and that your time here is a wonderful experience!</p>
+
+    <div class="margin-note">Note: hello. </div>
+
+    <h2>Exercises</h2>
+    <ol>
+      <li>There are no exercises on the home page. Who would have thought?</li>
+    </ol>
+
+    <nav class="lesson-nav" aria-label="Lesson navigation">
+      <a class="next" href="lesson2-2.html">1.1 What is Vex Robotics? →</a>
+    </nav>
+  </main>
+
+</div>
+
+</body>
 </html>
