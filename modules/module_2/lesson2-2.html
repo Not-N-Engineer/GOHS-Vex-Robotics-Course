@@ -54,25 +54,39 @@
 
       <main>
         <p class="eyebrow">Module 2 · Lesson 2.2</p>
-        <h1> Introduction to Python </h1>
+        <h1> Introduction to C++ </h1>
 
-        <p>Since you are doing robotics, you probably have at least a small knowledge of coding. YOu have probably seen this line a million times: </p>
+        <div class="margin-note">Note: this lesson is meant as a refresher for those who already know c++ or already know the basics of coding and simply want to learn c++. While it can be used for beginning coders, it is reccommended that you take a separate online course specifically meant for beginners. </div>
 
-        <div class="exhibit">print("hello world")</div>
+        <p>Of course, the cliché, we must begin with printing hello world: </p>
 
-        <p>The goal of this module is not to reteach you coding (Although that is exactly what the next lesson is for if you need a refresher). 
-          It is to teach you how to use your coding knowledge to control a robot that you designed and built.</p>
+        <div class="exhibit">
+          #include &lt;iostream&gt;
+            
+          int main() {
+          // Printing hello world
+          std::cout &lt;&lt; "Hello, World!";
+          
+          // Printing age
+          int age = 25;
+          std::cout &lt;&lt; "I am " &lt;&lt; age &lt;&lt; " years old.";
+    
+          return 0;
+          }
+        </div>
 
-        <div class="margin-note">Note: this is a note. </div>
+        <p>But despite the seeming simplicity of the action, this block of code actually has plenty of useful information for a first-time c++ coder.</p>
+
+        <p>First, </p>
 
         <h2>Exercises</h2>
-        <p>idk do these</p>
         <ol>
-          <li>Have fun. </li>
+          <li>Create a c++ file that prints out your name, age, and an introduction using variables to keep track of everything. </li>
+          <li>Create a car class with variables and methods for keeping track of mileage, miles_per_gallon, and fuel_remaining. </li>
         </ol>
 
         <h2>Before the next lesson</h2>
-        <p>Take a break and go outside.</p>
+        <p>Take a break and go outside, that was probably a lot to take in all at once. </p>
 
         <nav class="lesson-nav" aria-label="Lesson navigation">
           <a href="lesson2-1.html">← 2.1 What is coding for Vex?</a>
