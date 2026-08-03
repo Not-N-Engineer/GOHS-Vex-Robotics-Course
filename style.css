@@ -19,7 +19,7 @@
   }
 
   .binder{
-    max-width: 1180px;
+    max-width: 1920px;
     margin: 0 auto;
     min-height: 100vh;
     background: var(--paper);
