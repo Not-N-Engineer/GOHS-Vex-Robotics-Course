@@ -38,7 +38,7 @@
   }
 
   .comment{
-      color: #b3b3b3;
+      color: #7a7a7a;
       font-style: italic;
   }
 
@@ -194,6 +194,13 @@
     margin: 44px 0 14px 0;
     padding-bottom: 8px;
     border-bottom: 1px solid var(--rule);
+  }
+
+  main h3{
+    font-family: var(--serif);
+    font-size: 18px;
+    margin: 44px 0 14px 0;
+    padding-bottom: 8px;
   }
 
   main p{
