@@ -28,6 +28,27 @@
     box-shadow: 0 0 60px rgba(0,0,0,0.45);
   }
 
+  /* ---------- CPP Colors ---------- */
+  .keyword{
+      color: #6435ca;
+  }
+
+  .string{
+      color: #1f9448;
+  }
+
+  .literal{
+      color: #227b9e;
+  }
+
+  .method{
+      color: #b06544;
+  }
+
+  .var{
+      color: #a43c28;
+  }
+
   /* ---------- Sidebar ---------- */
   aside{
     padding: 40px 24px 40px 32px;
