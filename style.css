@@ -37,6 +37,11 @@
       color: #1f9448;
   }
 
+  .comment{
+      color: #b3b3b3;
+      font-style: italic;
+  }
+
   .literal{
       color: #227b9e;
   }
