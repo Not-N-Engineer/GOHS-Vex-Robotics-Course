@@ -60,20 +60,18 @@
 
         <p>Of course, the cliché, we must begin with printing hello world: </p>
 
-        <div class="exhibit">
-          #include &lt;iostream&gt;
-            
-          int main() {
-          // Printing hello world
-          std::cout &lt;&lt; "Hello, World!";
-          
-          // Printing age
-          int age = 25;
-          std::cout &lt;&lt; "I am " &lt;&lt; age &lt;&lt; " years old.";
-    
-          return 0;
-          }
-        </div>
+        <div class="exhibit"><span class="keyword">#include</span> <span class="string">&lt;iostream&gt;</span>
+
+<span class="keyword">int</span> <span class="method">main</span>() {
+<span class="comment">// Printing hello world</span>
+<span class="method">std</span>::cout &lt;&lt; <span class="string">"Hello, World!"</span>;
+
+<span class="comment">// Printing age</span>
+<span class="keyword">int</span> <span class="var">age</span> = <span class="literal">25</span>;
+<span class="method">std</span>::cout &lt;&lt; <span class="string">"I am "</span> &lt;&lt; <span class="var">age</span> &lt;&lt; <span class="string">" years old."</span>;
+
+return 0;
+}</div>
 
         <p>But despite the seeming simplicity of the action, this block of code actually has plenty of useful information for a first-time c++ coder.</p>
 
