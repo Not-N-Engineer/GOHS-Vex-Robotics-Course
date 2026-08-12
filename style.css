@@ -209,8 +209,10 @@
     margin: 0 0 20px 0;
   }
 
-  main div span {
-  font-size: calc(1em - 2px);
+  .parentheses{
+    font-size: calc(1em - 1px);
+    color: #7a7a7a;
+    font-style: italic;
   }
 
   .exhibit{
@@ -226,6 +228,7 @@
 
   .code{
     font-family: var(--mono);
+    font-size: calc(1em - 1px);
     background: var(--paper-dim);
     padding: 3px;
     white-space: pre-wrap;
@@ -238,7 +241,7 @@
     border: 1px dashed var(--redline);
     padding: 10px 14px;
     margin: 0 0 28px 0;
-    max-width: 900px;
+    max-width: 480px;
   }
 
   .margin-note-unlimited{
