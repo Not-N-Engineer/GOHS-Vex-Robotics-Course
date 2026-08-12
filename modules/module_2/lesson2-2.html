@@ -63,11 +63,11 @@
         <p class="eyebrow">Module 2 · Lesson 2.2</p>
         <h1> Introduction to C++ </h1>
 
-        <div class="margin-note">Note: this lesson is meant as a refresher for those who already know c++ or already know the basics of coding and simply want to learn c++. While it can be used for beginning coders, it is reccommended that you take a separate online course specifically meant for beginners. </div>
+        <div class="margin-note">Note: This lesson is meant as a refresher for those who already know c++ or already know the basics of coding and simply want to learn c++. While it can be used for beginning coders, it is reccommended that you take a separate online course specifically meant for beginners. </div>
 
         <p>Of course, I know it's cliché, but we'll begin with printing hello world: </p>
 
-        <!--Exhibit 1-->
+        <!--Hello World Exhibit-->
         <div class="exhibit"><span class="keyword">#include</span> <span class="string">&lt;iostream&gt;</span>
 
 <span class="keyword">int</span> <span class="method">main</span>() {
@@ -86,24 +86,39 @@
         <div class="margin-note-unlimited">Note: You may recieve the advice to write or stumble upon the usage of -- if you do not want to write <span class="code"><span class="method">std</span>::</span> before <span class="code">cin</span> and <span class="code">cin</span> -- the line <span class="code"><span class="keyword">using namespace</span> <span class="method">std</span>;</span>, or similarly -- if you want to automatically include the entire standard c++ library instead of just iostream or typing all needed headers manually -- the line <span class="code"><span class="keyword">#include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span>. This is extremely bad practice and for various reasons should not be done in any actual projects. The former is bad practice since importing an entire namespace globally can expectedly cause issues <span class="comment">(it is much better practice to use</span> <span class="code"><span class="keyword">using</span> <span class="method">std</span>::cout;</span> <span class="parentheses">etc., which accomplishes the same effect but spares declaring the std namespace for everything)</span>. The latter is bad practice because the header is only included in the gcc/g++ compiler -- which is commonly used for competition programming judging software and online compilers, explaining its widespread use in competition coding -- and should therefore only be used for lazily testing small pieces of code. </div>
         <div class="margin-note">Note 2: I know you may not like the use of em-dashes in writing in a modern context, but I assure you that they were indeed neccessary for the allowance of my lengthy mid-sentence tangents, so stop yelling at me ok? </div>
 
-        <!--Exhibit 2-->
-        <div class="exhibit"><span class="comment">// Printing age</span>
-<span class="keyword">int</span> <span class="var">age</span> = <span class="literal">25</span>;
-<span class="method">std</span>::cout &lt;&lt; <span class="string">"I am "</span> &lt;&lt; <span class="var">age</span> &lt;&lt; <span class="string">" years old."</span>;</div>
 
-        <h3>Ifs and Loops</h3>
+        <h2>C++ Basics</h2>
+        <p>Now, with the introduction to writing code in c++ out of the way, it is time to introduce the basic elements of c++.</p>
+
+        <h3>Variables</h3>
+        <p>Variables are words that you assign values to store. To declare a variable, you first write the data type the variable will store and then the name of the vraiable. To use a variable, simply type the variable's name without quotations within the scope <span class="parentheses">(you can ignore that term for now)</span> of the variable. To assign or reassign the variable a value, you simply append an equal sign to the name of the variable and then write the data you want to assign to it: </p>
+
+        <!--Variables Exhibit-->
+        <div class="exhibit"><span class="comment">// You can declare and assign a variable a value on separate lines...</span>
+<span class="keyword">string</span> <span class="var">name</span>;
+<span class="var">name</span> = <span class="string">"Yujie"</span>;
+<span class="comment">// ...or ont he same line</span>
+<span class="keyword">int</span> <span class="var">age</span> = <span class="literal">25</span>;
+<span class="comment">// Here is how you can output variables mixed with text</span>
+<span class="method">std</span>::cout &lt;&lt; <span class="string">"My name is "</span> &lt;&lt; <span class="var">name</span> &lt;&lt; <span class="string">"and I am "</span> &lt;&lt; <span class="var">age</span> &lt;&lt; <span class="string">" years old."</span>;</div>
+
+        <div class="margin-note">Note: The <span class="code"><span class="keyword">string</span></span> datatype is not a primitive datatype, meaning that you must import it using <span class="code"><span class="keyword">#include</span> <span class="string">&lt;string&gt;</span></span></div>
+
+        <h3>Data Types</h3>
+
         
+        <h3>Ifs and Loops</h3>
         <p>If statements are statements that choose whether or not to run a section of code depending on whether they receive a true or false, defined as follows:</p>
 
 
         <h3>Functions and Methods</h3>
-        
         <p>Functions and methods are blocks of code that can be called repeatedly without having to rewrite the entire block of code they contain:</p>
 
 
-        <h3>Classes</h3>
-        
+        <h3>Classes</h3> 
         <p>Classes are essentially blueprints for instances of classes called objects. They are defined as follows:</p>
+
+        <div class="margin-note-unlimited">Fun Fact: Everything in object-orientated languages like c++, java, javascript, and python is an object! This means that, reflecting the way that you can assign a variable your own custum object type and initialize its values through <span class="code">Car <span class="var">toyota</span> = Car(<span class="literal">3</span>);</span> or <span class="code">Car <span class="var">toyota</span>(<span class="literal">3</span>);</span>, you can assign primitive types through <span class="code"><span class="keyword">int</span> <span class="var">age</span> = <span class="keyword">int</span>(<span class="literal">25</span>);</span> and <span class="code"><span class="keyword">int</span> <span class="var">age(<span class="literal">25</span>);</span>. Low-level languages allow you to do a lot of weird and funny notation like this, and I encourage you to look into as many stupid, complicated, and pretentious ways of writing things as you can. Surprise me!</div>
 
 
         <h2>Exercises</h2>
