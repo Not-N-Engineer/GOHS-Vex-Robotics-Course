@@ -209,6 +209,10 @@
     margin: 0 0 20px 0;
   }
 
+  main div span {
+  font-size: calc(1em - 2px);
+  }
+
   .exhibit{
     font-family: var(--mono);
     font-size: 14.5px;
@@ -222,11 +226,8 @@
 
   .code{
     font-family: var(--mono);
-    font-size: 14.5px;
-    line-height: 1.9;
     background: var(--paper-dim);
     padding: 3px;
-    margin: 3px;
     white-space: pre-wrap;
   }
 
@@ -237,7 +238,16 @@
     border: 1px dashed var(--redline);
     padding: 10px 14px;
     margin: 0 0 28px 0;
-    max-width: 480px;
+    max-width: 900px;
+  }
+
+  .margin-note-unlimited{
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--redline);
+    border: 1px dashed var(--redline);
+    padding: 10px 14px;
+    margin: 24px 0 28px 0;
   }
 
   .lesson-nav{
