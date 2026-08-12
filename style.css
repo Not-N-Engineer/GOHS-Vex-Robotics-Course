@@ -220,6 +220,16 @@
     white-space: pre-wrap;
   }
 
+  .code{
+    font-family: var(--mono);
+    font-size: 14.5px;
+    line-height: 1.9;
+    background: var(--paper-dim);
+    padding: 3px;
+    margin: 3px;
+    white-space: pre-wrap;
+  }
+
   .margin-note{
     font-family: var(--mono);
     font-size: 12.5px;
