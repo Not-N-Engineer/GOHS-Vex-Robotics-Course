@@ -224,11 +224,16 @@
 <span class="keyword">for</span>(int i = 0; i &lt; num_times; i++) {
     <span class="comment">/* CODE GOES HERE */</span>
 }
+<span class="comment">// In essense: </span>
+<span class="keyword">for</span>(<span class="comment">/* init declerations */</span>; <span class="comment">/* expression that equates to a bool */</span>; <span class="comment">/* statement */</span>) {
+    <span class="comment">/* you can also just have nothing for one or multiple of the fields */</span>
+}
 <span class="comment">// You can also go crazy: </span>
 <span class="keyword">int</span> <span class="var">i</span> = <span class="literal">0</span>;
-<span class="keyword">for</span>(; true; --i) {
-    <span class="comment">/* I DON'T KNOW WHAT THIS DOES, BUT I THINK IT COMPILES */</span>
+<span class="keyword">for</span>(<span class="keyword">int</span> p{<span class="literal">3</span>}, <span class="keyword">float</span> yesterday = <span class="literal">14.8</span>; <span class="bool">true</span>; --i, p = yesterday**<span class="literal">2</span>, i = p + yesterday) {
+    <span class="comment">/* IF THIS COMPILES, IT PORBABLY? JUST LOOPS INFINITELY BECAUSE OF THE TRUE INPUT */</span>
     <span class="comment">/* C++ ALLOWS SOME CRAZY STUFF */</span>
+    <span class="comment">/* OH YEAH, I FORGOT TO MENTION THAT YOU CAN HAVE MULTIPLE DECLARATIONS AND STATEMENTS BY USING COMMAS */</span>
 }
 </div>
 
