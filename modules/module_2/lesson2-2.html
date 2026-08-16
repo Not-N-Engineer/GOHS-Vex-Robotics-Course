@@ -67,45 +67,116 @@
 
       <div class="spine" aria-hidden="true"></div>
 
+
       <main>
         <p class="eyebrow">Module 2 · Lesson 2.2</p>
         <h1> Introduction to C++ </h1>
 
-        <div class="margin-note">Note: this lesson is meant as a refresher for those who already know c++ or already know the basics of coding and simply want to learn c++. While it can be used for beginning coders, it is reccommended that you take a separate online course specifically meant for beginners. </div>
+        <div class="margin-note">Note: This lesson is meant as a refresher for those who already know c++ or already know the basics of coding and simply want to learn c++. While it can be used for beginning coders, it is reccommended that you take a separate online course specifically meant for beginners. </div>
 
-        <p>Of course, the cliché, we must begin with printing hello world: </p>
-
+        <p>Of course, I know it's cliché, but we'll begin with printing hello world: </p>
+        <!--Hello World Exhibit-->
         <div class="exhibit"><span class="keyword">#include</span> <span class="string">&lt;iostream&gt;</span>
 
 <span class="keyword">int</span> <span class="method">main</span>() {
     <span class="comment">// Printing hello world</span>
-    <span class="method">std</span>::cout &lt;&lt; <span class="string">"Hello, World!"</span>;
-
-    <span class="comment">// Printing age</span>
-    <span class="keyword">int</span> <span class="var">age</span> = <span class="literal">25</span>;
-    <span class="method">std</span>::cout &lt;&lt; <span class="string">"I am "</span> &lt;&lt; <span class="var">age</span> &lt;&lt; <span class="string">" years old."</span>;
+    <span class="method">std</span>::cout &lt;&lt; <span class="string">"Hello world!"</span>; <span class="comment"> // Comments can also be on the same line as code. </span>
 
     return 0;
 }</div>
-
         <p>But despite the seeming simplicity of the action, this block of code actually has plenty of useful information for a first-time c++ coder.</p>
 
-        <p>First, </p>
+        <p>First, the first line of the programm is to import a library, or header, called iostream. This library is used to handle input and output through commands like cin and cout, which are used later in the code to output "Hello world!" to the console. </p>
+        <p>Next, the core body of the code is done inside <span class="code"><span class="keyword">int</span> <span class="method">main</span>()</span>. While code can be written outside of this main function, which you will learn about later in this lesson, the code that is executed directly upon the running of a .cpp file is what is written in <span class="code"><span class="keyword">int</span> <span class="method">main</span>()</span>. You can learn more about <span class="code"><span class="keyword">int</span> <span class="method">main</span>()</span> somewhere else, and you will learn more about how to declare functions and methods in c++ on this page, but for now, all you need to know is that in order for code to be executed <span class="parentheses">(not including code in functions that are called in</span> <span class="code"><span class="keyword">int</span> <span class="method">main</span>()</span><span class="parentheses">)</span> it must be written in <span class="code"><span class="keyword">int</span> <span class="method">main</span>()</span>. </p>
+        <p>The body of the code <span class="parentheses">(what is written in</span> <span class="code"><span class="keyword">int</span> <span class="method">main</span>()</span><span class="parentheses">)</span> is what actually prints "Hello world!" In these two lines you will find a comment, declared by two forward slashes, as well as the more important <span class="code"><span class="method">std</span>::cout &lt;&lt; <span class="string">"Hello world!"</span>;</span>. This line of code uses <span class="code"><span class="method">std</span>::cout</span> to tell the computer to output the information to the right of the brackets <span class="parentheses">(this will be elaborated on in the next section)</span>. You can similarly use <span class="code"><span class="method">std</span>::cin</span> with <span class="code">&gt;&gt;</span> to take inputs. </p> 
 
+        <div class="margin-note-unlimited">Note: You may recieve the advice to write or stumble upon the usage of -- if you do not want to write <span class="code"><span class="method">std</span>::</span> before <span class="code">cin</span> and <span class="code">cin</span> -- the line <span class="code"><span class="keyword">using namespace</span> <span class="method">std</span>;</span>, or similarly -- if you want to automatically include the entire standard c++ library instead of just iostream or typing all needed headers manually -- the line <span class="code"><span class="keyword">#include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span>. This is extremely bad practice and for various reasons should not be done in any actual projects. The former is bad practice since importing an entire namespace globally can expectedly cause issues <span class="comment">(it is much better practice to use</span> <span class="code"><span class="keyword">using</span> <span class="method">std</span>::cout;</span> <span class="parentheses">etc., which accomplishes the same effect but spares declaring the std namespace for everything)</span>. The latter is bad practice because the header is only included in the gcc/g++ compiler -- which is commonly used for competition programming judging software and online compilers, explaining its widespread use in competition coding -- and should therefore only be used for lazily testing small pieces of code. </div>
+        <div class="margin-note">Note 2: I know you may not like the use of em-dashes in writing in a modern context, but I assure you that they were indeed neccessary for the allowance of my lengthy mid-sentence tangents, so stop yelling at me ok? </div>
+
+
+        <h2>C++ Basics</h2>
+        <p>Now, with the introduction to writing code in c++ out of the way, it is time to introduce the basic elements of c++.</p>
+
+
+        <h3>Variables</h3>
+        <p>Variables are words that you assign values to store. To declare a variable, you first write the data type the variable will store and then the name of the vraiable. To use a variable, simply type the variable's name without quotations within the scope <span class="parentheses">(you can ignore that term for now)</span> of the variable. To assign or reassign the variable a value, you simply append an equal sign to the name of the variable and then write the data you want to assign to it: </p>
+        <!--Variables Exhibit-->
+        <div class="exhibit"><span class="comment">// You can declare and assign a variable a value on separate lines...</span>
+<span class="keyword">string</span> <span class="var">name</span>;
+<span class="var">name</span> = <span class="string">"Yujie"</span>;
+<span class="comment">// ...or on the same line</span>
+<span class="keyword">int</span> <span class="var">age</span> = <span class="literal">25</span>;
+<span class="comment">// Here is how you can output variables mixed with text</span>
+<span class="method">std</span>::cout &lt;&lt; <span class="string">"My name is "</span> &lt;&lt; <span class="var">name</span> &lt;&lt; <span class="string">"and I am "</span> &lt;&lt; <span class="var">age</span> &lt;&lt; <span class="string">" years old."</span>;</div>
+
+        <div class="margin-note">Note: The <span class="code"><span class="keyword">string</span></span> datatype is not a primitive datatype, meaning that you must import it using <span class="code"><span class="keyword">#include</span> <span class="string">&lt;string&gt;</span></span></div>
+
+
+        <h3>Data Types</h3>
+        <p>C++ is a type-specific-language, which means that you must define the type of input something recieves or the type of output a method returns. That is why the variable declarations you saw earlier began with the type that variable stores and then the variable itself. Unlike dynamically type languages like python, which change the type that a variable stores depending on what you assign to it, c++ will throw a type error when you attempt to assign the wrong type to a variable or output the wrong type from a method. </p>
+        <p>By default, c++ automatically contains 7 groups of primitive (fundamental) types: chars, signed ints, unsigned ints, floats <span class="parentheses">(numbers that have decimals stored using floating-point)</span>, bools <span class="parentheses">(<span class="code"><span class="bool">true</span></span> and <span class="code"><span class="bool">false</span></span>)</span>, void <span class="parentheses">(which just stores nothing, meaning that a method doesn't return anything or that a variable does nothing)</span>, and null pointers <span class="parentheses">(basically, things are stored in places in your computer's memory and "pointers" like variables work by "pointing" to the location the data is stored. Null, rather than storing nothing like void, points to a location that stores information that tells the computer there is nothing)</span>. </p>
+        <p>Here is a table of all of the primitive types of c++ taken from <a target="_blank" href="https://cplusplus.com/doc/tutorial/variables/">cplusplus.com:</a></p>
+        <table class="table">
+          <tbody><tr><th>Group</th><th>Type names</th><th>Notes on size / precision</th></tr>
+          <tr><td rowspan="4">Character types</td><td><code><b>char</b></code></td><td>Exactly one byte in size. At least 8 bits.</td></tr>
+          <tr><td><code><b>char16_t</b></code></td><td>Not smaller than <code>char</code>. At least 16 bits.</td></tr>
+          <tr><td><code><b>char32_t</b></code></td><td>Not smaller than <code>char16_t</code>. At least 32 bits.</td></tr>
+          <tr><td><code><b>wchar_t</b></code></td><td>Can represent the largest supported character set.</td></tr>
+          <tr><td rowspan="5">Integer types (signed)</td><td><code><b>signed char</b></code></td><td>Same size as <code>char</code>. At least 8 bits.</td></tr>
+          <tr><td><code><i>signed</i> <b>short</b> <i>int</i></code></td><td>Not smaller than <code>char</code>. At least 16 bits.</td></tr>
+          <tr><td><code><i>signed</i> <b>int</b></code></td><td>Not smaller than <code>short</code>. At least 16 bits.</td></tr>
+          <tr><td><code><i>signed</i> <b>long</b> <i>int</i></code></td><td>Not smaller than <code>int</code>. At least 32 bits.</td></tr>
+          <tr><td><code><i>signed</i> <b>long long</b> <i>int</i></code></td><td>Not smaller than <code>long</code>. At least 64 bits.</td></tr>
+          <tr><td rowspan="5">Integer types (unsigned)</td><td><code><b>unsigned char</b></code></td><td rowspan="5">(same size as their signed counterparts)</td></tr>
+          <tr><td><code><b>unsigned short</b> <i>int</i></code></td></tr>
+          <tr><td><code><b>unsigned</b> <i>int</i></code></td></tr>
+          <tr><td><code><b>unsigned long</b> <i>int</i></code></td></tr>
+          <tr><td><code><b>unsigned long long</b> <i>int</i></code></td></tr>
+          <tr><td rowspan="3">Floating-point types</td><td><code><b>float</b></code></td><td></td></tr>
+          <tr><td><code><b>double</b></code></td><td>Precision not less than <code>float</code></td></tr>
+          <tr><td><code><b>long double</b></code></td><td>Precision not less than <code>double</code></td></tr>
+          <tr><td>Boolean type</td><td><code><b>bool</b></code></td><td></td></tr>
+          <tr><td>Void type</td><td><code><b>void</b></code></td><td>no storage</td></tr>
+          <tr><td>Null pointer</td><td><code><b>decltype(nullptr)</b></code></td><td></td></tr>
+          </tbody>
+        </table>
+        <p>To use these types, simply type the type name (the bold text in the type name column) before a variable or method definition. </p>
 
         <h3>Ifs and Loops</h3>
-        
         <p>If statements are statements that choose whether or not to run a section of code depending on whether they receive a true or false, defined as follows:</p>
+        <!--Ifs Exhibit-->
+        <div class="exhibit"><span class="comment">// An if statement takes a boolean operator, which can be a bool...</span>
+<span class="keyword">if</span>(<span class="bool">true</span>) {
+    <span class="comment">// this code will be run since the operator is true</span>
+    <span class="method">std</span>::cout &lt;&lt; <span class="string">"Cars are just very big dogs except minus the dog part and plus a car. "</span>;
+}
+<span class="comment">// ...a pointer to a bool, like a variable or method that returns a bool...</span>
+<span class="keyword">if</span>(<span class="method">method_that_returns_a_bool</span>()) {
+    <span class="comment">// this code will be run if the method returns true</span>
+    <span class="method">std</span>::cout &lt;&lt; <span class="string">"GIRAFFES"</span>;
+}
+<span class="comment">// ...or an expression composed of mathematical operators, parentheses, && (and), || (or), and ! (not). </span>
+<span class="keyword">int</span> <span class="var">x</span> = <span class="literal">4</span>;
+<span class="keyword">char</span> <span class="var">character</span> = <span class="string">'4'</span>;
+<span class="keyword">if</span>((!(x != character) && (x &gt; 30) || (x &lt;= 1))) {
+    <span class="comment">// try to figure out if this code is run</span>
+    <span class="method">std</span>::cout &lt;&lt; <span class="string">"You aren't limited to just using true and false."</span>;
+    <span class="method">std</span>::cout &lt;&lt; <span class="string">"If statements also accept 0s as false and any other (real) number as true."</span>;
+}
+</div>
 
 
         <h3>Functions and Methods</h3>
-        
         <p>Functions and methods are blocks of code that can be called repeatedly without having to rewrite the entire block of code they contain:</p>
 
 
-        <h3>Classes</h3>
-        
+        <h3>Classes</h3> 
         <p>Classes are essentially blueprints for instances of classes called objects. They are defined as follows:</p>
+
+        <div class="margin-note-unlimited">Fun Fact: Everything in object-orientated languages like c++, java, javascript, and python is an object! This means that, reflecting the way that you can assign a variable your own custum object type and initialize its values through <span class="code">Car <span class="var">toyota</span> = Car(<span class="literal">3</span>);</span> or <span class="code">Car <span class="var">toyota</span>(<span class="literal">3</span>);</span>, you can assign primitive types through <span class="code"><span class="keyword">int</span> <span class="var">age</span> = <span class="keyword">int</span>(<span class="literal">25</span>);</span> and <span class="code"><span class="keyword">int</span> <span class="var">age(<span class="literal">25</span>);</span></span>. Low-level languages allow you to do a lot of weird and funny notation like this, and I encourage you to look into as many stupid, complicated, and pretentious ways of writing things as you can. Surprise me!</div>
+
+
+        <h3>Imports and Scope</h3>
 
 
         <h2>Exercises</h2>
@@ -115,8 +186,8 @@
         </ol>
 
 
-        <h2>Before the next lesson</h2>
-        <p>Take a break and go outside, that was probably a lot to take in all at once. </p>
+        <h2>More Resources on Learning C++</h2>
+        <p></p>
 
         <nav class="lesson-nav" aria-label="Lesson navigation">
           <a href="lesson2-1.html">← 2.1 What is coding for Vex?</a>
