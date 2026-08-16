@@ -33,6 +33,10 @@
       color: #6435ca;
   }
 
+  .bool{
+      color: #0c43d0;
+  }
+
   .string{
       color: #1f9448;
   }
@@ -215,6 +219,14 @@
     font-style: italic;
   }
 
+  .code{
+    font-family: var(--mono);
+    font-size: calc(1em - 1px);
+    background: var(--paper-dim);
+    padding: 3px;
+    white-space: pre-wrap;
+  }
+
   .exhibit{
     font-family: var(--mono);
     font-size: 14.5px;
@@ -226,12 +238,13 @@
     white-space: pre-wrap;
   }
 
-  .code{
+  .table{
     font-family: var(--mono);
-    font-size: calc(1em - 1px);
-    background: var(--paper-dim);
-    padding: 3px;
-    white-space: pre-wrap;
+    line-height: 1.5;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
   }
 
   .margin-note{

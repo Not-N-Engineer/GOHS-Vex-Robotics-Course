@@ -105,11 +105,37 @@
         <div class="margin-note">Note: The <span class="code"><span class="keyword">string</span></span> datatype is not a primitive datatype, meaning that you must import it using <span class="code"><span class="keyword">#include</span> <span class="string">&lt;string&gt;</span></span></div>
 
         <h3>Data Types</h3>
+        <p>C++ is a type-specific-language, which means that you must define the type of input something recieves or the type of output a method returns. That is why the variable declarations you saw earlier began with the type that variable stores and then the variable itself. Unlike dynamically type languages like python, which change the type that a variable stores depending on what you assign to it, c++ will throw a type error when you attempt to assign the wrong type to a variable or output the wrong type from a method. </p>
+        <p>By default, c++ automatically contains 7 groups of primitive (fundamental) types: chars, signed ints, unsigned ints, floats <span class="parentheses">(numbers that have decimals stored using floating-point)</span>, bools <span class="parentheses">(<span class="code"><span class="bool">true</span></span> and <span class="code"><span class="bool">false</span></span>)</span>, void <span class="parentheses">(which just stores nothing, meaning that a method doesn't return anything or that a variable does nothing)</span>, and null pointers <span class="parentheses">(basically, things are stored in places in your computer's memory and "pointers" like variables work by "pointing" to the location the data is stored. Null, rather than storing nothing like void, points to a location that stores information that tells the computer there is nothing)</span>. </p>
+        <p>Here is a table of all of the primitive types of c++ taken from <a target="_blank" href="https://cplusplus.com/doc/tutorial/variables/">cplusplus.com:</a></p>
+        <table class="table">
+          <tbody><tr><th>Group</th><th>Type names</th><th>Notes on size / precision</th></tr>
+          <tr><td rowspan="4">Character types</td><td><code><b>char</b></code></td><td>Exactly one byte in size. At least 8 bits.</td></tr>
+          <tr><td><code><b>char16_t</b></code></td><td>Not smaller than <code>char</code>. At least 16 bits.</td></tr>
+          <tr><td><code><b>char32_t</b></code></td><td>Not smaller than <code>char16_t</code>. At least 32 bits.</td></tr>
+          <tr><td><code><b>wchar_t</b></code></td><td>Can represent the largest supported character set.</td></tr>
+          <tr><td rowspan="5">Integer types (signed)</td><td><code><b>signed char</b></code></td><td>Same size as <code>char</code>. At least 8 bits.</td></tr>
+          <tr><td><code><i>signed</i> <b>short</b> <i>int</i></code></td><td>Not smaller than <code>char</code>. At least 16 bits.</td></tr>
+          <tr><td><code><i>signed</i> <b>int</b></code></td><td>Not smaller than <code>short</code>. At least 16 bits.</td></tr>
+          <tr><td><code><i>signed</i> <b>long</b> <i>int</i></code></td><td>Not smaller than <code>int</code>. At least 32 bits.</td></tr>
+          <tr><td><code><i>signed</i> <b>long long</b> <i>int</i></code></td><td>Not smaller than <code>long</code>. At least 64 bits.</td></tr>
+          <tr><td rowspan="5">Integer types (unsigned)</td><td><code><b>unsigned char</b></code></td><td rowspan="5">(same size as their signed counterparts)</td></tr>
+          <tr><td><code><b>unsigned short</b> <i>int</i></code></td></tr>
+          <tr><td><code><b>unsigned</b> <i>int</i></code></td></tr>
+          <tr><td><code><b>unsigned long</b> <i>int</i></code></td></tr>
+          <tr><td><code><b>unsigned long long</b> <i>int</i></code></td></tr>
+          <tr><td rowspan="3">Floating-point types</td><td><code><b>float</b></code></td><td></td></tr>
+          <tr><td><code><b>double</b></code></td><td>Precision not less than <code>float</code></td></tr>
+          <tr><td><code><b>long double</b></code></td><td>Precision not less than <code>double</code></td></tr>
+          <tr><td>Boolean type</td><td><code><b>bool</b></code></td><td></td></tr>
+          <tr><td>Void type</td><td><code><b>void</b></code></td><td>no storage</td></tr>
+          <tr><td>Null pointer</td><td><code><b>decltype(nullptr)</b></code></td><td></td></tr>
+          </tbody>
+        </table>
+        <p>To use these types, simply type the type name before a variable or method definition. </p>
 
-        
         <h3>Ifs and Loops</h3>
         <p>If statements are statements that choose whether or not to run a section of code depending on whether they receive a true or false, defined as follows:</p>
-
 
         <h3>Functions and Methods</h3>
         <p>Functions and methods are blocks of code that can be called repeatedly without having to rewrite the entire block of code they contain:</p>
@@ -120,6 +146,7 @@
 
         <div class="margin-note-unlimited">Fun Fact: Everything in object-orientated languages like c++, java, javascript, and python is an object! This means that, reflecting the way that you can assign a variable your own custum object type and initialize its values through <span class="code">Car <span class="var">toyota</span> = Car(<span class="literal">3</span>);</span> or <span class="code">Car <span class="var">toyota</span>(<span class="literal">3</span>);</span>, you can assign primitive types through <span class="code"><span class="keyword">int</span> <span class="var">age</span> = <span class="keyword">int</span>(<span class="literal">25</span>);</span> and <span class="code"><span class="keyword">int</span> <span class="var">age(<span class="literal">25</span>);</span></span>. Low-level languages allow you to do a lot of weird and funny notation like this, and I encourage you to look into as many stupid, complicated, and pretentious ways of writing things as you can. Surprise me!</div>
 
+        <h3>Imports and Scope</h3>
 
         <h2>Exercises</h2>
         <ol>
