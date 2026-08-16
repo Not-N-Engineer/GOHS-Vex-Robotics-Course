@@ -59,6 +59,7 @@
 
       <div class="spine" aria-hidden="true"></div>
 
+
       <main>
         <p class="eyebrow">Module 2 · Lesson 2.2</p>
         <h1> Introduction to C++ </h1>
@@ -66,7 +67,6 @@
         <div class="margin-note">Note: This lesson is meant as a refresher for those who already know c++ or already know the basics of coding and simply want to learn c++. While it can be used for beginning coders, it is reccommended that you take a separate online course specifically meant for beginners. </div>
 
         <p>Of course, I know it's cliché, but we'll begin with printing hello world: </p>
-
         <!--Hello World Exhibit-->
         <div class="exhibit"><span class="keyword">#include</span> <span class="string">&lt;iostream&gt;</span>
 
@@ -76,7 +76,6 @@
 
     return 0;
 }</div>
-
         <p>But despite the seeming simplicity of the action, this block of code actually has plenty of useful information for a first-time c++ coder.</p>
 
         <p>First, the first line of the programm is to import a library, or header, called iostream. This library is used to handle input and output through commands like cin and cout, which are used later in the code to output "Hello world!" to the console. </p>
@@ -90,9 +89,9 @@
         <h2>C++ Basics</h2>
         <p>Now, with the introduction to writing code in c++ out of the way, it is time to introduce the basic elements of c++.</p>
 
+
         <h3>Variables</h3>
         <p>Variables are words that you assign values to store. To declare a variable, you first write the data type the variable will store and then the name of the vraiable. To use a variable, simply type the variable's name without quotations within the scope <span class="parentheses">(you can ignore that term for now)</span> of the variable. To assign or reassign the variable a value, you simply append an equal sign to the name of the variable and then write the data you want to assign to it: </p>
-
         <!--Variables Exhibit-->
         <div class="exhibit"><span class="comment">// You can declare and assign a variable a value on separate lines...</span>
 <span class="keyword">string</span> <span class="var">name</span>;
@@ -103,6 +102,7 @@
 <span class="method">std</span>::cout &lt;&lt; <span class="string">"My name is "</span> &lt;&lt; <span class="var">name</span> &lt;&lt; <span class="string">"and I am "</span> &lt;&lt; <span class="var">age</span> &lt;&lt; <span class="string">" years old."</span>;</div>
 
         <div class="margin-note">Note: The <span class="code"><span class="keyword">string</span></span> datatype is not a primitive datatype, meaning that you must import it using <span class="code"><span class="keyword">#include</span> <span class="string">&lt;string&gt;</span></span></div>
+
 
         <h3>Data Types</h3>
         <p>C++ is a type-specific-language, which means that you must define the type of input something recieves or the type of output a method returns. That is why the variable declarations you saw earlier began with the type that variable stores and then the variable itself. Unlike dynamically type languages like python, which change the type that a variable stores depending on what you assign to it, c++ will throw a type error when you attempt to assign the wrong type to a variable or output the wrong type from a method. </p>
@@ -132,10 +132,31 @@
           <tr><td>Null pointer</td><td><code><b>decltype(nullptr)</b></code></td><td></td></tr>
           </tbody>
         </table>
-        <p>To use these types, simply type the type name before a variable or method definition. </p>
+        <p>To use these types, simply type the type name (the bold text in the type name column) before a variable or method definition. </p>
 
         <h3>Ifs and Loops</h3>
         <p>If statements are statements that choose whether or not to run a section of code depending on whether they receive a true or false, defined as follows:</p>
+        <!--Ifs Exhibit-->
+        <div class="exhibit"><span class="comment">// An if statement takes a boolean operator, which can be a bool...</span>
+<span class="keyword">if</span>(<span class="bool">true</span>) {
+    <span class="comment">// this code will be run since the operator is true</span>
+    <span class="method">std</span>::cout &lt;&lt; <span class="string">"Cars are just very big dogs except minus the dog part and plus a car. "</span>;
+}
+<span class="comment">// ...a pointer to a bool, like a variable or method that returns a bool...</span>
+<span class="keyword">if</span>(<span class="method">method_that_returns_a_bool</span>()) {
+    <span class="comment">// this code will be run if the method returns true</span>
+    <span class="method">std</span>::cout &lt;&lt; <span class="string">"GIRAFFES"</span>;
+}
+<span class="comment">// ...or an expression composed of mathematical operators, parentheses, && (and), || (or), and ! (not). </span>
+<span class="keyword">int</span> <span class="var">x</span> = <span class="literal">4</span>;
+<span class="keyword">char</span> <span class="var">character</span> = <span class="string">'4'</span>;
+<span class="keyword">if</span>((!(x != character) && (x &gt; 30) || (x &lt;= 1))) {
+    <span class="comment">// try to figure out if this code is run</span>
+    <span class="method">std</span>::cout &lt;&lt; <span class="string">"You aren't limited to just using true and false."</span>;
+    <span class="method">std</span>::cout &lt;&lt; <span class="string">"If statements also accept 0s as false and any other (real) number as true."</span>;<span class="comment"> // Complex numbers dont work</span>
+}
+</div>
+
 
         <h3>Functions and Methods</h3>
         <p>Functions and methods are blocks of code that can be called repeatedly without having to rewrite the entire block of code they contain:</p>
@@ -146,7 +167,9 @@
 
         <div class="margin-note-unlimited">Fun Fact: Everything in object-orientated languages like c++, java, javascript, and python is an object! This means that, reflecting the way that you can assign a variable your own custum object type and initialize its values through <span class="code">Car <span class="var">toyota</span> = Car(<span class="literal">3</span>);</span> or <span class="code">Car <span class="var">toyota</span>(<span class="literal">3</span>);</span>, you can assign primitive types through <span class="code"><span class="keyword">int</span> <span class="var">age</span> = <span class="keyword">int</span>(<span class="literal">25</span>);</span> and <span class="code"><span class="keyword">int</span> <span class="var">age(<span class="literal">25</span>);</span></span>. Low-level languages allow you to do a lot of weird and funny notation like this, and I encourage you to look into as many stupid, complicated, and pretentious ways of writing things as you can. Surprise me!</div>
 
+
         <h3>Imports and Scope</h3>
+
 
         <h2>Exercises</h2>
         <ol>
@@ -155,8 +178,8 @@
         </ol>
 
 
-        <h2>Before the next lesson</h2>
-        <p>Take a break and go outside, that was probably a lot to take in all at once. </p>
+        <h2>More Resources on Learning C++</h2>
+        <p></p>
 
         <nav class="lesson-nav" aria-label="Lesson navigation">
           <a href="lesson2-1.html">← 2.1 What is coding for Vex?</a>
