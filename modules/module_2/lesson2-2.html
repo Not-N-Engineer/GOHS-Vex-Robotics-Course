@@ -179,7 +179,7 @@
 <span class="comment">// If you want the while loop to stop at any moment, you can use the break keyword. </span>
 <span class="keyword">while</span>(<span class="bool">true</span>) {
     intruder_present = checkForIntruder();
-    if(intruder_present) {
+    <span class="keyword">if</span>(intruder_present) {
         <span class="keyword">break</span>;
     }
 }
@@ -188,7 +188,7 @@
 <span class="keyword">int</span> <span class="var">num_times</span> = <span class="literal">4</span>;
 <span class="keyword">while</span>(x &gt; <span class="literal">0</span>) {
     intruder_present = checkForIntruder();
-    if(intruder_present) {
+    <span class="keyword">if</span>(intruder_present) {
         <span class="keyword">break</span>;
     }
     num_times -= <span class="literal">1</span>; <span class="comment">// Shorthand for 'num_times = num_times - 1;'. </span>
@@ -199,7 +199,7 @@
 <span class="keyword">int</span> <span class="var">i</span> = <span class="literal">0</span>;
 <span class="keyword">while</span>(i &lt; num_times) {
     intruder_present = checkForIntruder();
-    if(intruder_present) {
+    <span class="keyword">if</span>(intruder_present) {
         <span class="keyword">break</span>;
     }
     i++;
@@ -219,12 +219,12 @@
     <span class="comment">   however, you can also use multi-line, c-style, comments. */</span>
     i /* C-style comments can go inside of lines of code! */ ++;
 }
-<div class="exhibit"><span class="comment">// For loops are fommatted like this: </span>
+<span class="comment">// For loops are fommatted like this: </span>
 <span class="keyword">int</span> <span class="var">num_times</span> = <span class="literal">4</span>;
 <span class="keyword">for</span>(int i = 0; i &lt; num_times; i++) {
     <span class="comment">/* CODE GOES HERE */</span>
 }
-<div class="exhibit"><span class="comment">// You can also go crazy: </span>
+<span class="comment">// You can also go crazy: </span>
 <span class="keyword">int</span> <span class="var">num_times</span> = <span class="literal">4</span>;
 <span class="keyword">int</span> <span class="var">i</span> = <span class="literal">0</span>;
 <span class="keyword">for</span>(; true; --i) {
