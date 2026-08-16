@@ -213,6 +213,15 @@
     margin: 0 0 20px 0;
   }
 
+  main table{ /* FROM CPLUSPLUS.COM */
+    display: table;
+    box-sizing: border-box;
+    border-collapse: separate;
+    text-indent: initial;
+    unicode-bidi: isolate;
+    border-spacing: 2px;
+  }
+
   .parentheses{
     font-size: calc(1em - 1px);
     color: #7a7a7a;
@@ -238,7 +247,7 @@
     white-space: pre-wrap;
   }
 
-  .table{
+  .table{ /* FROM CPLUSPLUS.COM */
     font-family: var(--mono);
     line-height: 1.5;
     border: 0;
