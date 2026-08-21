@@ -189,8 +189,9 @@
 <span class="keyword">while</span>(x &gt; <span class="literal">0</span>) {
     intruder_present = checkForIntruder();
     <span class="keyword">if</span>(intruder_present) {
-        <span class="keyword">break</span>;
+        <span class="keyword">continue</span>; <span class="comment">// Continue can be used if you want to stop the current loop but continue to the next one. </span>
     }
+    <span class="comment">// For example, this code will not be run if intruder is detected in the same loop. </span>
     num_times -= <span class="literal">1</span>; <span class="comment">// Shorthand for 'num_times = num_times - 1;'. </span>
     <span class="comment">// You can also use 'num_times--;' which defaults to 1. </span>
 }
@@ -231,15 +232,17 @@
 <span class="comment">// You can also go crazy: </span>
 <span class="keyword">int</span> <span class="var">i</span> = <span class="literal">0</span>;
 <span class="keyword">for</span>(<span class="keyword">int</span> p{<span class="literal">3</span>}, <span class="keyword">float</span> yesterday = <span class="literal">14.8</span>; <span class="bool">true</span>; --i, p = yesterday**<span class="literal">2</span>, i = p + yesterday) {
-    <span class="comment">/* IF THIS COMPILES, IT PORBABLY? JUST LOOPS INFINITELY BECAUSE OF THE TRUE INPUT */</span>
-    <span class="comment">/* C++ ALLOWS SOME CRAZY STUFF */</span>
-    <span class="comment">/* OH YEAH, I FORGOT TO MENTION THAT YOU CAN HAVE MULTIPLE DECLARATIONS AND STATEMENTS BY USING COMMAS */</span>
+    <span class="comment">/* Try figuring out what this does. */</span>
+    <span class="comment">/* C++ allows some crazy stuff */</span>
+    <span class="comment">/* Also, as seen in the example, you can have multiple statements in a field using commas. */</span>
 }
 </div>
 
 
         <h3>Functions and Methods</h3>
-        <p>Functions and methods are blocks of code that can be called repeatedly without having to rewrite the entire block of code they contain:</p>
+        <p>Functions and methods are blocks of code that can be called repeatedly without having to rewrite the entire block of code they contain.</p>
+        <!--Functions Exhibit-->
+        <div class="exhibit"></div>
 
 
         <h3>Classes</h3> 
