@@ -3,7 +3,7 @@
     --paper: #f0ede2;
     --paper-dim: #e5e1d2;
     --rule: #c9c3ac;
-    --redline: #EA624A;
+    --redline: #83282D;
     --gold: #8a6d1f;
     --mono: "Courier New", Courier, monospace;
     --serif: Georgia, "Iowan Old Style", "Times New Roman", serif;
@@ -216,6 +216,10 @@
     font-size: 17px;
     line-height: 1.75;
     margin: 0 0 20px 0;
+  }
+
+  main li{
+    margin: 0px 0 20px 0;
   }
 
   .parentheses{
