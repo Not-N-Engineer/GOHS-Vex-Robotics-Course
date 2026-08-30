@@ -306,6 +306,50 @@
   .lesson-nav a:hover{ color: var(--redline); }
   .lesson-nav .next{ text-align: right; }
 
+  .tab{
+    margin: 24px 0 32px 0;
+  }
+  
+  .tab .tab-button{
+    display: flex;
+    border-bottom: 2px solid var(--rule);
+  }
+  
+  .tab .tab-button button{
+    flex: 1;
+    padding: 10px 14px;
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: var(--ink);
+    cursor: pointer;
+  }
+  
+  .tab .tab-button button:hover{
+    background: var(--paper-dim);
+  }
+  
+  .tab .tab-button button[aria-selected="true"]{
+    border-bottom-color: var(--redline);
+    color: var(--redline);
+    font-weight: bold;
+  }
+  
+  .tab .tab-panel{
+    display: none;
+    padding: 20px;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  
+  .tab .tab-panel.active{
+    display: block;
+  }
+
   aside::-webkit-scrollbar,
   main::-webkit-scrollbar{
     display: none;

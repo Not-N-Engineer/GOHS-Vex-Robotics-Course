@@ -12,6 +12,24 @@
     -->
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
   </head>
+  <script>
+    document.querySelectorAll('.tab').forEach(function(group){
+      const buttons = group.querySelectorAll('[role="tab"]');
+      const panels = group.querySelectorAll('[role="tabpanel"]');
+    
+      buttons.forEach(function(button){
+        button.addEventListener('click', function(){
+          buttons.forEach(b => b.setAttribute('aria-selected', 'false'));
+          panels.forEach(p => { p.classList.remove('active'); p.hidden = true; });
+    
+          button.setAttribute('aria-selected', 'true');
+          const panel = group.querySelector('#' + button.getAttribute('aria-controls'));
+          panel.classList.add('active');
+          panel.hidden = false;
+        });
+      });
+    });
+  </script>
   <body>
     <div class="binder">
 
@@ -73,25 +91,29 @@
 
         <div class="margin-note">Note: you must have either a mac or ubuntu device for this course. </div>
 
-        <h2>Setup for Mac</h2>
-
-        <p>Since you are doing robotics, you probably have at least a small knowledge of coding. YOu have probably seen this line a million times: </p>
-
-        <div class="exhibit">print("hello world")</div>
-
-        <p>The goal of this module is not to reteach you coding (Although that is exactly what the next lesson is for if you need a refresher). 
-          It is to teach you how to use your coding knowledge to control a robot that you designed and built.</p>
-
+        <div class="tab">
+          <div class="tab-button" role="tablist" aria-label="Operating system choice">
+            <button role="tab" aria-selected="true" aria-controls="panel-mac" id="tab-mac">Mac</button>
+            <button role="tab" aria-selected="false" aria-controls="panel-windows" id="tab-windows">Windows</button>
+            <button role="tab" aria-selected="false" aria-controls="panel-linux" id="tab-linux">Linux</button>
+          </div>
         
-
-        <h2>Exercises</h2>
-        <p>idk do these</p>
-        <ol>
-          <li>Have fun. </li>
-        </ol>
-
-        <h2>Before the next lesson</h2>
-        <p>Take a break and go outside.</p>
+          <div class="tab-panel active" id="panel-mac" role="tabpanel" aria-labelledby="tab-mac">
+            <p>1. Open <strong>Terminal</strong> from Spotlight (<code>Cmd + Space</code>, then type "Terminal").</p>
+            <p>2. Install Homebrew by pasting this into Terminal:</p>
+            <p><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></p>
+          </div>
+        
+          <div class="tab-panel" id="panel-windows" role="tabpanel" aria-labelledby="tab-windows" hidden>
+            <p>1. Download the installer from <a href="#">this link</a>.</p>
+            <p>2. Run the <code>.exe</code> file and follow the setup wizard.</p>
+          </div>
+        
+          <div class="tab-panel" id="panel-linux" role="tabpanel" aria-labelledby="tab-linux" hidden>
+            <p>1. Open a terminal and run:</p>
+            <p><code>sudo apt update &amp;&amp; sudo apt install build-essential</code></p>
+          </div>
+        </div>
 
         <nav class="lesson-nav" aria-label="Lesson navigation">
           <a href="../module_0/lesson0-2.html">← 0.2 How this club will work</a>
