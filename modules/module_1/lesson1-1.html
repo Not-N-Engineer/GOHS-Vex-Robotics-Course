@@ -12,24 +12,6 @@
     -->
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
   </head>
-  <script>
-    document.querySelectorAll('.tab').forEach(function(group){
-      const buttons = group.querySelectorAll('[role="tab"]');
-      const panels = group.querySelectorAll('[role="tabpanel"]');
-    
-      buttons.forEach(function(button){
-        button.addEventListener('click', function(){
-          buttons.forEach(b => b.setAttribute('aria-selected', 'false'));
-          panels.forEach(p => { p.classList.remove('active'); p.hidden = true; });
-    
-          button.setAttribute('aria-selected', 'true');
-          const panel = group.querySelector('#' + button.getAttribute('aria-controls'));
-          panel.classList.add('active');
-          panel.hidden = false;
-        });
-      });
-    });
-  </script>
   <body>
     <div class="binder">
 
@@ -101,17 +83,17 @@
           <div class="tab-panel active" id="panel-mac" role="tabpanel" aria-labelledby="tab-mac">
             <p>1. Open <strong>Terminal</strong> from Spotlight (<code>Cmd + Space</code>, then type "Terminal").</p>
             <p>2. Install Homebrew by pasting this into Terminal:</p>
-            <p><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></p>
+            <p><span class="code">/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</span></p>
           </div>
         
           <div class="tab-panel" id="panel-windows" role="tabpanel" aria-labelledby="tab-windows" hidden>
             <p>1. Download the installer from <a href="#">this link</a>.</p>
-            <p>2. Run the <code>.exe</code> file and follow the setup wizard.</p>
+            <p>2. Run the <span class="code">.exe</span> file and follow the setup wizard.</p>
           </div>
         
           <div class="tab-panel" id="panel-linux" role="tabpanel" aria-labelledby="tab-linux" hidden>
             <p>1. Open a terminal and run:</p>
-            <p><code>sudo apt update &amp;&amp; sudo apt install build-essential</code></p>
+            <p><span class="code">sudo apt update &amp;&amp; sudo apt install build-essential</span></p>
           </div>
         </div>
 
@@ -122,5 +104,24 @@
       </main>
 
     </div>
+
+    <script>
+      document.querySelectorAll('.tab').forEach(function(group){
+        const buttons = group.querySelectorAll('[role="tab"]');
+        const panels = group.querySelectorAll('[role="tabpanel"]');
+      
+        buttons.forEach(function(button){
+          button.addEventListener('click', function(){
+            buttons.forEach(b => b.setAttribute('aria-selected', 'false'));
+            panels.forEach(p => { p.classList.remove('active'); p.hidden = true; });
+      
+            button.setAttribute('aria-selected', 'true');
+            const panel = group.querySelector('#' + button.getAttribute('aria-controls'));
+            panel.classList.add('active');
+            panel.hidden = false;
+          });
+        });
+      });
+    </script>
   </body>
 </html>
