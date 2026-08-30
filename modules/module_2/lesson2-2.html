@@ -90,7 +90,7 @@
         <p>Next, the core body of the code is done inside <span class="code"><span class="keyword">int</span> <span class="method">main</span>()</span>. While code can be written outside of this main function, which you will learn about later in this lesson, the code that is executed directly upon the running of a .cpp file is what is written in <span class="code"><span class="keyword">int</span> <span class="method">main</span>()</span>. You can learn more about <span class="code"><span class="keyword">int</span> <span class="method">main</span>()</span> somewhere else, and you will learn more about how to declare functions and methods in c++ on this page, but for now, all you need to know is that in order for code to be executed <span class="parentheses">(not including code in functions that are called in</span> <span class="code"><span class="keyword">int</span> <span class="method">main</span>()</span><span class="parentheses">)</span> it must be written in <span class="code"><span class="keyword">int</span> <span class="method">main</span>()</span>. </p>
         <p>The body of the code <span class="parentheses">(what is written in</span> <span class="code"><span class="keyword">int</span> <span class="method">main</span>()</span><span class="parentheses">)</span> is what actually prints "Hello world!" In these two lines you will find a comment, declared by two forward slashes, as well as the more important <span class="code"><span class="method">std</span>::cout &lt;&lt; <span class="string">"Hello world!"</span>;</span>. This line of code uses <span class="code"><span class="method">std</span>::cout</span> to tell the computer to output the information to the right of the brackets <span class="parentheses">(this will be elaborated on in the next section)</span>. You can similarly use <span class="code"><span class="method">std</span>::cin</span> with <span class="code">&gt;&gt;</span> to take inputs. </p> 
 
-        <div class="margin-note-unlimited">Note: You may recieve the advice to write or stumble upon the usage of -- if you do not want to write <span class="code"><span class="method">std</span>::</span> before <span class="code">cin</span> and <span class="code">cin</span> -- the line <span class="code"><span class="keyword">using namespace</span> <span class="method">std</span>;</span>, or similarly -- if you want to automatically include the entire standard c++ library instead of just iostream or typing all needed headers manually -- the line <span class="code"><span class="keyword">#include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span>. This is extremely bad practice and for various reasons should not be done in any actual projects. The former is bad practice since importing an entire namespace globally can expectedly cause issues <span class="comment">(it is much better practice to use</span> <span class="code"><span class="keyword">using</span> <span class="method">std</span>::cout;</span> <span class="parentheses">etc., which accomplishes the same effect but spares declaring the std namespace for everything)</span>. The latter is bad practice because the header is only included in the gcc/g++ compiler -- which is commonly used for competition programming judging software and online compilers, explaining its widespread use in competition coding -- and should therefore only be used for lazily testing small pieces of code. </div>
+        <div class="margin-note-unlimited">Note 1: You may recieve the advice to write or stumble upon the usage of -- if you do not want to write <span class="code"><span class="method">std</span>::</span> before <span class="code">cin</span> and <span class="code">cin</span> -- the line <span class="code"><span class="keyword">using namespace</span> <span class="method">std</span>;</span>, or similarly -- if you want to automatically include the entire standard c++ library instead of just iostream or typing all needed headers manually -- the line <span class="code"><span class="keyword">#include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span>. This is extremely bad practice and for various reasons should not be done in any actual projects. The former is bad practice since importing an entire namespace globally can expectedly cause issues <span class="comment">(it is much better practice to use</span> <span class="code"><span class="keyword">using</span> <span class="method">std</span>::cout;</span> <span class="parentheses">etc., which accomplishes the same effect but spares declaring the std namespace for everything)</span>. The latter is bad practice because the header is only included in the gcc/g++ compiler -- which is commonly used for competition programming judging software and online compilers, explaining its widespread use in competition coding -- and should therefore only be used for lazily testing small pieces of code. </div>
         <div class="margin-note">Note 2: I know you may not like the use of em-dashes in writing in a modern context, but I assure you that they were indeed neccessary for the allowance of my lengthy mid-sentence tangents, so stop yelling at me ok? </div>
 
 
@@ -107,14 +107,14 @@
 <span class="comment">// ...or on the same line</span>
 <span class="keyword">int</span> <span class="var">age</span> = <span class="literal">25</span>;
 <span class="comment">// Here is how you can output variables mixed with text</span>
-<span class="method">std</span>::cout &lt;&lt; <span class="string">"My name is "</span> &lt;&lt; <span class="var">name</span> &lt;&lt; <span class="string">"and I am "</span> &lt;&lt; <span class="var">age</span> &lt;&lt; <span class="string">" years old."</span>;</div>
+<span class="method">std</span>::cout &lt;&lt; <span class="string">"My name is "</span> &lt;&lt; <span class="var">name</span> &lt;&lt; <span class="string">" and I am "</span> &lt;&lt; <span class="var">age</span> &lt;&lt; <span class="string">" years old."</span>;</div>
 
         <div class="margin-note">Note: The <span class="code"><span class="keyword">string</span></span> datatype is not a primitive datatype, meaning that you must import it using <span class="code"><span class="keyword">#include</span> <span class="string">&lt;string&gt;</span></span></div>
 
 
         <h3>Data Types</h3>
         <p>C++ is a type-specific-language, which means that you must define the type of input something recieves or the type of output a method returns. That is why the variable declarations you saw earlier began with the type that variable stores and then the variable itself. Unlike dynamically type languages like python, which change the type that a variable stores depending on what you assign to it, c++ will throw a type error when you attempt to assign the wrong type to a variable or output the wrong type from a method. </p>
-        <p>By default, c++ automatically contains 7 groups of primitive (fundamental) types: chars, signed ints, unsigned ints, floats <span class="parentheses">(numbers that have decimals stored using floating-point)</span>, bools <span class="parentheses">(<span class="code"><span class="bool">true</span></span> and <span class="code"><span class="bool">false</span></span>)</span>, void <span class="parentheses">(which just stores nothing, meaning that a method doesn't return anything or that a variable does nothing)</span>, and null pointers <span class="parentheses">(basically, things are stored in places in your computer's memory and "pointers" like variables work by "pointing" to the location the data is stored. Null, rather than storing nothing like void, points to a location that stores information that tells the computer there is nothing)</span>. </p>
+        <p>By default, c++ automatically contains 7 groups of primitive (fundamental) types: chars, signed ints, unsigned ints, floats <span class="parentheses">(numbers that have decimals stored using floating-point)</span>, bools <span class="parentheses">(<span class="code"><span class="bool">true</span></span> and <span class="code"><span class="bool">false</span></span>)</span>, void <span class="parentheses">(which just means no value, meaning that a method doesn't return anything and variables cannot be of this type)</span>, and null pointers <span class="parentheses">(basically, things are stored in places in your computer's memory and "pointer" variables work by "pointing" to the location the data is stored. Null, rather than storing nothing like void, is actually a value that can be assigned to a pointer that just tells the computer that the pointer isn't pointing at something valid.)</span>. </p>
         <p>Here is a table of all of the primitive types of c++ taken from <a target="_blank" href="https://cplusplus.com/doc/tutorial/variables/">cplusplus.com:</a></p>
         <table class="table">
           <tbody><tr><th>Group</th><th>Type names</th><th>Notes on size / precision</th></tr>
@@ -142,7 +142,7 @@
         </table>
         <p>To use these types, simply type the type name (the bold text in the type name column) before a variable or method definition. </p>
 
-        <h3>Ifs and Loops</h3>
+        <h3>If Statements</h3>
         <p>If statements are statements that choose whether or not to run a section of code depending on whether they receive a true or false, defined as follows:</p>
         <!--Ifs Exhibit-->
         <div class="exhibit"><span class="comment">// An if statement takes a boolean operator, which can be a bool...</span>
@@ -166,28 +166,318 @@
 </div>
 
 
+        <h3>Loops</h3>
+        <p>Loops are a method used to repeat a section of code a variable or large number of times without needing to copy and paste them many times. In most programming languages, there are two main types of loops: while loops which repeatedly run code while a condition is true, and for loops which repeatedly run code for a set number of times. </p>
+        <p>A while loop is defined as follows: </p>
+        <!--While Loops Exhibit-->
+        <div class="exhibit"><span class="comment">// Much like an if statement, a while loop takes a conditional. </span>
+<span class="comment">// You can do something like this to have code repeat forever: </span>
+<span class="keyword">while</span>(<span class="bool">true</span>) {
+    <span class="comment">// this should only be done when it is neccessary to repeat code inifinitely</span>
+    checkForIntruder();
+}
+<span class="comment">// If you want the while loop to stop at any moment, you can use the break keyword. </span>
+<span class="keyword">while</span>(<span class="bool">true</span>) {
+    intruder_present = checkForIntruder();
+    <span class="keyword">if</span>(intruder_present) {
+        <span class="keyword">break</span>;
+    }
+}
+<span class="comment">// You can also have code run a fixed number of times: </span>
+<span class="comment">// Ex. 1 </span>
+<span class="keyword">int</span> <span class="var">num_times</span> = <span class="literal">4</span>;
+<span class="keyword">while</span>(num_times &gt;<span class="literal">0</span>) {
+    intruder_present = checkForIntruder();
+    <span class="keyword">if</span>(intruder_present) {
+        <span class="keyword">continue</span>; <span class="comment">// Continue can be used if you want to stop the current loop but continue to the next one. </span>
+    }
+    <span class="comment">// For example, this code will not be run if intruder is detected in the same loop. </span>
+    num_times -= <span class="literal">1</span>; <span class="comment">// Shorthand for 'num_times = num_times - 1;'. </span>
+    <span class="comment">// You can also use 'num_times--;' which defaults to 1. </span>
+}
+<span class="comment">// Ex. 2 </span>
+<span class="keyword">int</span> <span class="var">num_times</span> = <span class="literal">4</span>;
+<span class="keyword">int</span> <span class="var">i</span> = <span class="literal">0</span>;
+<span class="keyword">while</span>(i &lt; num_times) {
+    intruder_present = checkForIntruder();
+    <span class="keyword">if</span>(intruder_present) {
+        <span class="keyword">break</span>;
+    }
+    i++;
+}
+</div>
+        <div class="margin-note">Note: When using infinite loops, you should use a timeout function to make sure the code dooesn't loop too fast. </div>
+        <p>However, while loops are not always the most efficient method. In fact, the way the last case has been formatted may actually be familiar to you if you've studied for loops:</p>
+        <!--For Loops Exhibit-->
+        <div class="exhibit"><span class="comment">// While while loops are formatted like this: </span>
+<span class="keyword">int</span> <span class="var">num_times</span> = <span class="literal">4</span>;
+<span class="keyword">int</span> <span class="var">i</span> = <span class="literal">0</span>;
+<span class="keyword">while</span>(i &lt;= num_times) {
+    <span class="comment">/* CODE GOES HERE */</span>
+    <span class="comment">/* Fun Fact! </span>
+    <span class="comment">   the "//" style comments you see me use are called single-line, </span>
+    <span class="comment">   or c++-style comments.</span>
+    <span class="comment">   however, you can also use multi-line, c-style, comments. */</span>
+    i <span class="comment">/* C-style comments can go inside of lines of code! */</span> ++;
+}
+<span class="comment">// For loops are fommatted like this: </span>
+<span class="keyword">int</span> <span class="var">num_times</span> = <span class="literal">4</span>;
+<span class="keyword">for</span>(int i = 0; i &lt; num_times; i++) {
+    <span class="comment">/* CODE GOES HERE */</span>
+}
+<span class="comment">// In essense: </span>
+<span class="keyword">for</span>(<span class="comment">/* init declerations */</span>; <span class="comment">/* expression that equates to a bool */</span>; <span class="comment">/* statement */</span>) {
+    <span class="comment">/* you can also just have nothing for one or multiple of the fields */</span>
+}
+<span class="comment">// You can also go crazy: </span>
+<span class="keyword">int</span> <span class="var">i</span> = <span class="literal">0</span>;
+<span class="keyword">for</span>(<span class="keyword">int</span> p{<span class="literal">3</span>}, <span class="keyword">float</span> yesterday = <span class="literal">14.8</span>; <span class="bool">true</span>; --i, p = yesterday**<span class="literal">2</span>, i = p + yesterday) {
+    <span class="comment">/* Try figuring out what this does. */</span>
+    <span class="comment">/* C++ allows some crazy stuff */</span>
+    <span class="comment">/* Also, as seen in the example, you can have multiple statements in a field using commas. */</span>
+}
+</div>
+
+
         <h3>Functions and Methods</h3>
-        <p>Functions and methods are blocks of code that can be called repeatedly without having to rewrite the entire block of code they contain:</p>
+        <p>Functions and methods are blocks of code that can be called repeatedly without having to rewrite the entire block of code they contain.</p>
+        <p>A function is declared similarly to a variable, but instead of a value it is given a body of code to  inside curly braces, and instead of just a type to store, it is given a return type <span class="parentheses">(the type of data the function outputs when it finishes running using the <span class="code"><span class="keyword">return</span></span> keyword)</span>. If a function doesn't output anything, its return type is simply <span class="code"><span class="keyword">void</span></span>. Functions can also be given parameters, variables listed in the parentheses that the function expects to be handed whenever it's called, which it can then use inside its body. </p>
+        <!--Functions Exhibit-->
+        <div class="exhibit"><span class="comment">// A function that takes no parameters and returns nothing</span>
+<span class="keyword">void</span> <span class="method">printHello</span>() {
+    <span class="method">std</span>::cout &lt;&lt; <span class="string">"Hello!"</span>;
+}
+ 
+<span class="comment">// A function that takes two parameters and returns their sum</span>
+<span class="keyword">int</span> <span class="method">addTwoNumbers</span>(<span class="keyword">int</span> x, <span class="keyword">int</span> y) {
+    <span class="keyword">return</span> x + y;
+}
+
+<span class="comment">// You can then call methods by placing their names followed by parentheses with arguments. </span>
+<span class="keyword">int</span> <span class="method">main</span>() {
+    <span class="method">printHello</span>(); <span class="comment">// calls printHello()</span>
+    <span class="keyword">int</span> <span class="var">sum</span> = <span class="method">addTwoNumbers</span>(<span class="literal">3</span>, <span class="literal">4</span>); <span class="comment">// calls addTwoNumbers() with arguments</span>
+    
+    <span class="keyword">return</span> 0;
+}
+</div>
+        <p>By default, c++ passes arguments into a function <span class="parentheses">(this is called "passing by value")</span>, meaning the function only receives a copy of whatever variable you hand it, and can't change the original no matter what it does to its own copy. If you actually want a function to be able to modify a variable you give it, you have to pass it "by reference" instead, which you do by adding an ampersand <span class="code">&amp;</span> to the type in the parameter list: </p>
+        <!--Pass By Reference Exhibit-->
+        <div class="exhibit"><span class="comment">// x here is only a copy, so the original is untouched.</span>
+<span class="keyword">void</span> <span class="method">makeZero1</span>(<span class="keyword">int</span> x) {
+    x = <span class="literal">0</span>;
+}
+ 
+<span class="comment">// x here, however, IS the original variable, instead of a copy.</span>
+<span class="keyword">void</span> <span class="method">makeZero2</span>(<span class="keyword">int</span> &amp;x) {
+    x = <span class="literal">0</span>;
+}
+</div>
+        <div class="margin-note">Note 1: Methods and functions are basically the same thing. Methods are just function that are written in classes.</div>
+        <div class="margin-note-unlimited">Note 2: If you want to call a function before it's been fully written out further down in your file <span class="parentheses">(or defined in a separate file entirely, which you'll start doing once your projects get bigger)</span>, you need to give the compiler a function prototype, which is just the first line of the function <span class="parentheses">(its return type, name, and parameter types)</span> followed by a semicolon instead of a body, like <span class="code"><span class="keyword">int</span> <span class="method">addTwoNumbers</span>(<span class="keyword">int</span> x, <span class="keyword">int</span> y);</span>.</div>
+
+
+        <h3>Scope</h3>
+        <p>Scope refers to where in your code something can be used. Every variable only exists within the block of code <span class="parentheses">(the code between a matching pair of curly braces</span> <span class="code">{ }</span><span class="parentheses">)</span> it was declared in, as well as any blocks nested inside of that one. Once the program leaves that block, the variable is destroyed and can no longer be accessed. </p>
+        <!--Scope Exhibit-->
+        <div class="exhibit"><span class="keyword">int</span> <span class="method">main</span>() {
+    <span class="keyword">int</span> <span class="var">outer</span> = <span class="literal">1</span>;
+ 
+    <span class="keyword">if</span>(<span class="bool">true</span>) {
+        <span class="keyword">int</span> <span class="var">inner</span> = <span class="literal">2</span>;
+        <span class="method">std</span>::cout &lt;&lt; outer; <span class="comment">// works, since outer belongs to an enclosing block</span>
+        <span class="method">std</span>::cout &lt;&lt; inner; <span class="comment">// also works, since inner belongs to this block</span>
+    }
+ 
+    <span class="method">std</span>::cout &lt;&lt; inner; <span class="comment">// ERROR! inner is used out of scope</span>
+
+    <span class="keyword">return</span> 0;
+}
+</div>
+        <p>Variables declared outside of any function entirely are said to have global scope, meaning they can be accessed from anywhere in the file below where they were declared, including from inside every function. While that might sound convenient, it's generally considered bad practice to overuse global variables, since it becomes much harder to keep track of which parts of a large program are changing them. </p>
+        <div class="margin-note">Note: If you declare a variable with the same name as one that already exists in an enclosing scope, the inner one "shadows" the outer one -- meaning any code inside that inner block will use the new variable instead of the old one, until the inner block ends. Most compilers will warn you when you do this, since it's a common source of bugs.</div>
+        <p>Functions and methods have scope too. A method defined inside a class only exists within that class <span class="parentheses">(you can't call a class method by itself, you have to go through the class it belongs to, through an object or a double colon operator)</span>. A plain function's scope runs from wherever the compiler has seen at least a declaration for it <span class="parentheses">(whether that's the real definition or just a prototype)</span>. </p>
+
+
+        <h3>Pointers</h3> 
+        <p>Every variable in your program is stored somewhere in your computer's memory, at a specific address. A pointer is just a variable whose job is to store one of these addresses instead of storing an actual value like a number or a string. This system is how values can be passed by reference, and probably has other uses that I'm unaware of. </p>
+        <p>To declare a pointer, you write the type of data it will point to, followed by an asterisk, followed by the pointer's name. To get the memory address of an existing variable, you put an <span class="code">&amp;</span> in front of that variable's name. To get the value stored at the address a pointer is pointing to, dereferencing it, you put an asterisk in front of the pointer's name. </p>
+        <!--Pointers Exhibit-->
+        <div class="exhibit"><span class="keyword">int</span> <span class="var">age</span> = <span class="literal">25</span>;
+<span class="comment">// Declaring a pointer to an int, and pointing it at the address of age</span>
+<span class="keyword">int</span>* <span class="var">agePointer</span> = &amp;age;
+ 
+<span class="method">std</span>::cout &lt;&lt; age; <span class="comment">// prints 25</span>
+<span class="method">std</span>::cout &lt;&lt; agePointer; <span class="comment">// prints something like 0x7ffee2, the memory address of age</span>
+<span class="method">std</span>::cout &lt;&lt; *agePointer; <span class="comment">// prints 25</span>
+ 
+<span class="comment">// Since agePointer points to age, changing one through the pointer changes the other</span>
+*agePointer = <span class="literal">30</span>;
+<span class="method">std</span>::cout &lt;&lt; age; <span class="comment">// prints 30, even though we never touched "age" directly!</span>
+ 
+<span class="comment">// To define pointer that isn't pointing at anything, assign it nullptr</span>
+<span class="keyword">int</span>* <span class="var">emptyPointer</span> = <span class="bool">nullptr</span>;
+</div>
+        <div class="margin-note-unlimited">Note: When passing a variable to a function by reference, you are actually using a version of a pointer called a reference, which c++ gives you so you don't have to deal with addresses and dereferencing directly. The reason we use pointers themselves is because they are more powerful <span class="parentheses">(and more dangerous)</span> than references. They can be reassigned to point at different things and used to build more complex data structures. </div>
 
 
         <h3>Classes</h3> 
         <p>Classes are essentially blueprints for instances of classes called objects. They are defined as follows:</p>
+        <div class="exhibit"><span class="keyword">class</span> <span class="method">Car</span> {
+    <span class="keyword">public</span>:
+        <span class="comment">// Variables and methods that can be called even in other programs (when imported)</span>
+        <span class="method">Car</span>(<span class="keyword">double</span> starting_mileage, <span class="keyword">double</span> starting_fuel) {
+            mileage = starting_mileage;
+            fuel_remaining = starting_fuel;
+        }
 
-        <div class="margin-note-unlimited">Fun Fact: Everything in object-orientated languages like c++, java, javascript, and python is an object! This means that, reflecting the way that you can assign a variable your own custum object type and initialize its values through <span class="code">Car <span class="var">toyota</span> = Car(<span class="literal">3</span>);</span> or <span class="code">Car <span class="var">toyota</span>(<span class="literal">3</span>);</span>, you can assign primitive types through <span class="code"><span class="keyword">int</span> <span class="var">age</span> = <span class="keyword">int</span>(<span class="literal">25</span>);</span> and <span class="code"><span class="keyword">int</span> <span class="var">age(<span class="literal">25</span>);</span></span>. Low-level languages allow you to do a lot of weird and funny notation like this, and I encourage you to look into as many stupid, complicated, and pretentious ways of writing things as you can. Surprise me!</div>
+        <span class="keyword">void</span> <span class="method">drive</span>(<span class="keyword">double</span> miles) {
+            mileage += miles;
+            fuel_remaining -= miles / miles_per_gallon;
+        }
+ 
+        <span class="keyword">double</span> <span class="method">getFuelRemaining</span>() {
+            <span class="keyword">return</span> fuel_remaining;
+        }
+ 
+    <span class="keyword">private</span>:
+        <span class="comment">// Variables and methods that only the class itself is allowed to touch</span>
+        <span class="keyword">double</span> <span class="var">mileage</span>;
+        <span class="keyword">double</span> <span class="var">miles_per_gallon</span> = <span class="literal">25.0</span>;
+        <span class="keyword">double</span> <span class="var">fuel_remaining</span>;
+};
+ 
+<span class="keyword">int</span> <span class="method">main</span>() {
+    <span class="comment">// Creating (instantiating) an object of the Car class</span>
+    <span class="method">Car</span> <span class="var">toyotaCorolla</span>(<span class="literal">35</span>, <span class="literal">13</span>);
+    toyota.drive(<span class="literal">50</span>);
+    <span class="method">std</span>::cout &lt;&lt; toyota.getFuelRemaining();
+
+    <span class="keyword">return</span> 0;
+}
+</div>
+        <p>The first thing you'll notice is that classes have a <span class="code"><span class="keyword">public</span>:</span> and <span class="code"><span class="keyword">private</span>:</span> section. All methods and variables of the class is declared int hese sections, and the meaning of them might be self-explanatory: things declared under <span class="code"><span class="keyword">public</span>:</span> can be accessed from outside the class <span class="parentheses">(like <span class="code">drive()</span>)</span>, while things declared under <span class="code"><span class="keyword">private</span>:</span> can only be accessed by code inside the class itself. </p>
+        <p>You'll also notice the <span class="code"><span class="method">Car</span>(<span class="keyword">double</span> starting_mileage)</span> method above, which shares its name with the class itself and has no return type at all. This is a constructor, which is a special method that automatically runs whenever a new object of that class is created and can be used to also assign starting values. </p> 
+        <p>Classes only need constructors when you want to create instances of the class, though. Classes like cmath allow you to simply call their methods without creating an instance at all through the <span class="code"><span class="keyword">static</span></span> keyword added to the beginning of method declerations: </p>
+        <!--Static Class Exhibit-->
+        <div class="exhibit"><span class="keyword">class</span> <span class="method">Math</span> {
+    <span class="keyword">public</span>:
+        <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">double</span> <span class="var">PI</span> = <span class="literal">3.14159</span>;
+ 
+        <span class="keyword">static</span> <span class="keyword">double</span> <span class="method">square</span>(<span class="keyword">double</span> x) {
+            <span class="keyword">return</span> x * x;
+        }
+ 
+        <span class="keyword">static</span> <span class="keyword">double</span> <span class="method">circleArea</span>(<span class="keyword">double</span> radius) {
+            <span class="keyword">return</span> PI * <span class="method">square</span>(radius);
+        }
+};
+ 
+<span class="keyword">int</span> <span class="method">main</span>() {
+    <span class="comment">// These methods are called even without an object being created</span>
+    <span class="method">std</span>::cout &lt;&lt; Math::square(<span class="literal">4</span>); 
+    <span class="method">std</span>::cout &lt;&lt; Math::circleArea(<span class="literal">2</span>); 
+
+    <span class="keyword">return</span> 0;
+}
+</div>
+ 
+        <div class="margin-note">Note: This is actually how <span class="code"><span class="method">std</span>::cout</span> works and standard library headers like <span class="code"><span class="keyword">#include</span> <span class="string">&lt;cmath&gt;</span></span> are full of static-style functions like <span class="code">sqrt()</span> and <span class="code">pow()</span> that you call directly without ever creating an object. </div>
+        <div class="margin-note-unlimited">Fun Fact: Everything in object-orientated languages like c++, java, javascript, and python is an object! This means that, reflecting the way that you can assign a variable your own custom object type and initialize its values through <span class="code">Car <span class="var">toyota</span> = Car(<span class="literal">3</span>);</span> or <span class="code">Car <span class="var">toyota</span>(<span class="literal">3</span>);</span>, you can assign primitive types through <span class="code"><span class="keyword">int</span> <span class="var">age</span> = <span class="keyword">int</span>(<span class="literal">25</span>);</span> and <span class="code"><span class="keyword">int</span> <span class="var">age(<span class="literal">25</span>);</span></span>. Low-level languages allow you to do a lot of weird and funny notation like this, and I encourage you to look into as many stupid, complicated, and pretentious ways of writing things as you can. Surprise me!</div>
 
 
         <h3>Imports and Scope</h3>
+        <p>When you write <span class="code"><span class="keyword">#include</span> <span class="string">&lt;iostream&gt;</span></span>, you're telling the compiler to copy and paste the entire contents of a file called iostream directly into the top of your own file before compiling it, which is how you gain access to things like <span class="code">std::cout</span> and <span class="code">std::cin</span> that aren't built directly into the core language. Angle brackets, like <span class="code">&lt;iostream&gt;</span>, tell the compiler to look for the header among the standard library or other installed libraries, while quotation marks, like <span class="code"><span class="string">"myfile.h"</span></span>, tell it to look for a file with that name in your own project instead when you are working with multiple c++ files. </p>
+        <p>When importing other files, you can't just include .cpp files, though: when you split your code across multiple .cpp files, each file actually gets compiled completely separately into its own chunk of machine code, and a separate program called the linker glues all of those chunks together at the very end into one program <span class="parentheses">(this this is why the compiler can take just a function prototype to let you call it from another file, it can simply wait for the full function to show up when the code is all linked together)</span>. Instead, we use .h files. These files hold just the declarations, so any .cpp file that wants to use a function written elsewhere can include the matching header instead of the whole other file. </p>
+        <!--Importing Methods Exhibit-->
+        <div class="exhibit"><span class="comment">/* add_method.h */</span>
+<span class="keyword">int</span> <span class="method">addTwoNumbers</span>(<span class="keyword">int</span> x, <span class="keyword">int</span> y);
+</div>
+ 
+<div class="exhibit"><span class="comment">/* add_method.cpp */</span>
+<span class="keyword">#include</span> <span class="string">"add_method.h"</span>
+ 
+<span class="keyword">int</span> <span class="method">addTwoNumbers</span>(<span class="keyword">int</span> x, <span class="keyword">int</span> y) {
+    <span class="keyword">return</span> x + y;
+}
+</div>
+
+        <div class="exhibit"><span class="comment">/* main.cpp */</span>
+<span class="keyword">#include</span> <span class="string">&lt;iostream&gt;</span>
+<span class="keyword">#include</span> <span class="string">"add_method.h"</span>
+ 
+<span class="keyword">int</span> <span class="method">main</span>() {
+    <span class="method">std</span>::cout &lt;&lt; <span class="method">addTwoNumbers</span>(<span class="literal">3</span>, <span class="literal">4</span>);
+
+    <span class="keyword">return</span> 0;
+}
+</div>
+        <p>Importing a function is straightforward, since the compiler only needs the declaration. However, classes are slightly different. The compiler needs to know a class's full layout with every member variable and method it has before it can create objects of that type, so the entire class definition usually goes in the header rather than just a stripped-down declaration. You can still split out the body of each method into the .cpp file by writing it separately and prefixing its name with <span class="code">ClassName::</span>. </p>
+        <!--Importing Classes Exhibit-->
+        <div class="exhibit"><span class="comment">/* car.h */</span>
+<span class="keyword">class</span> <span class="method">Car</span> {
+    <span class="keyword">public</span>:
+        <span class="method">Car</span>(<span class="keyword">double</span> starting_mileage);
+        <span class="keyword">void</span> <span class="method">drive</span>(<span class="keyword">double</span> miles);
+        <span class="keyword">double</span> <span class="method">getFuelRemaining</span>();
+ 
+    <span class="keyword">private</span>:
+        <span class="keyword">double</span> <span class="var">mileage</span>;
+        <span class="keyword">double</span> <span class="var">miles_per_gallon</span> = <span class="literal">25.0</span>;
+        <span class="keyword">double</span> <span class="var">fuel_remaining</span>;
+};
+</div>
+
+        <div class="exhibit"><span class="comment">/* car.cpp */</span>
+<span class="keyword">#include</span> <span class="string">"car.h"</span>
+ 
+<span class="method">Car</span>::<span class="method">Car</span>(<span class="keyword">double</span> starting_mileage) {
+    mileage = starting_mileage;
+    fuel_remaining = <span class="literal">10.0</span>;
+}
+ 
+<span class="keyword">void</span> <span class="method">Car</span>::<span class="method">drive</span>(<span class="keyword">double</span> miles) {
+    mileage += miles;
+    fuel_remaining -= miles / miles_per_gallon;
+}
+ 
+<span class="keyword">double</span> <span class="method">Car</span>::<span class="method">getFuelRemaining</span>() {
+    <span class="keyword">return</span> fuel_remaining;
+}
+</div>
+ 
+        <div class="exhibit"><span class="comment">/* main.cpp */</span>
+<span class="keyword">#include</span> <span class="string">&lt;iostream&gt;</span>
+<span class="keyword">#include</span> <span class="string">"car.h"</span>
+ 
+<span class="keyword">int</span> <span class="method">main</span>() {
+    <span class="comment">// Creating (instantiating) an object of the Car class</span>
+    <span class="method">Car</span> <span class="var">toyotaCorolla</span>(<span class="literal">35</span>, <span class="literal">13</span>);
+    toyota.drive(<span class="literal">50</span>);
+    <span class="method">std</span>::cout &lt;&lt; toyota.getFuelRemaining();
+
+    <span class="keyword">return</span> 0;
+}
+</div>
+        <div class="margin-note-unlimited">Unlike some other languages, c++ doesn't let you cherry-pick specific functions or variables to import from a file, the way python lets you write <span class="code">from module import thing</span>. By default, a function or global variable can be used anywhere in the program that has a matching declaration for it, called external linkage. If you want to keep something private to the file it's written in, so nothing else can use it even with a matching declaration, you mark it with the <span class="code"><span class="keyword">static</span></span> keyword at the top level of the file, or place it inside an anonymous namespace. </div>
+        <div class="margin-note">Note: This <span class="code"><span class="keyword">static</span></span> is a different use of the same keyword you saw in the Classes section. On a class member, <span class="code"><span class="keyword">static</span></span> means "shared by the whole class instead of each object." On a top-level function or variable, it means "only visible inside this file." </div>
 
 
         <h2>Exercises</h2>
         <ol>
           <li>Create a c++ file that prints out your name, age, and an introduction using variables to keep track of everything. </li>
-          <li>Create a car class with variables and methods for keeping track of mileage, miles_per_gallon, and fuel_remaining. </li>
+          <li>Extend the car class to be able to add more fuel. </li>
+          <li>Create a bankAccount class that allows you to create new users who each have names, account balances and unique ids. Make sure to include methods for all the actions you believe a bankAccount class should be able to perform. </li>
         </ol>
 
 
         <h2>More Resources on Learning C++</h2>
-        <p></p>
+        <ol>
+          <li><a href="https://www.w3schools.com/cpp/default.asp">w3schools' website</a></li>
+          <li><a href="https://www.learncpp.com">learncpp.com</a></li>
+          <li><a href="https://www.codecademy.com/learn/learn-c-plus-plus">Codecademy</a></li>
+          <li><a href="https://developers.google.com/edu/c++">Google's course (not for beginners)</a></li>
+        </ol>
 
         <nav class="lesson-nav" aria-label="Lesson navigation">
           <a href="lesson2-1.html">← 2.1 What is coding for Vex?</a>
