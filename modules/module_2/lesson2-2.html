@@ -107,14 +107,14 @@
 <span class="comment">// ...or on the same line</span>
 <span class="keyword">int</span> <span class="var">age</span> = <span class="literal">25</span>;
 <span class="comment">// Here is how you can output variables mixed with text</span>
-<span class="method">std</span>::cout &lt;&lt; <span class="string">"My name is "</span> &lt;&lt; <span class="var">name</span> &lt;&lt; <span class="string">"and I am "</span> &lt;&lt; <span class="var">age</span> &lt;&lt; <span class="string">" years old."</span>;</div>
+<span class="method">std</span>::cout &lt;&lt; <span class="string">"My name is "</span> &lt;&lt; <span class="var">name</span> &lt;&lt; <span class="string">" and I am "</span> &lt;&lt; <span class="var">age</span> &lt;&lt; <span class="string">" years old."</span>;</div>
 
         <div class="margin-note">Note: The <span class="code"><span class="keyword">string</span></span> datatype is not a primitive datatype, meaning that you must import it using <span class="code"><span class="keyword">#include</span> <span class="string">&lt;string&gt;</span></span></div>
 
 
         <h3>Data Types</h3>
         <p>C++ is a type-specific-language, which means that you must define the type of input something recieves or the type of output a method returns. That is why the variable declarations you saw earlier began with the type that variable stores and then the variable itself. Unlike dynamically type languages like python, which change the type that a variable stores depending on what you assign to it, c++ will throw a type error when you attempt to assign the wrong type to a variable or output the wrong type from a method. </p>
-        <p>By default, c++ automatically contains 7 groups of primitive (fundamental) types: chars, signed ints, unsigned ints, floats <span class="parentheses">(numbers that have decimals stored using floating-point)</span>, bools <span class="parentheses">(<span class="code"><span class="bool">true</span></span> and <span class="code"><span class="bool">false</span></span>)</span>, void <span class="parentheses">(which just stores nothing, meaning that a method doesn't return anything or that a variable does nothing)</span>, and null pointers <span class="parentheses">(basically, things are stored in places in your computer's memory and "pointers" like variables work by "pointing" to the location the data is stored. Null, rather than storing nothing like void, points to a location that stores information that tells the computer there is nothing)</span>. </p>
+        <p>By default, c++ automatically contains 7 groups of primitive (fundamental) types: chars, signed ints, unsigned ints, floats <span class="parentheses">(numbers that have decimals stored using floating-point)</span>, bools <span class="parentheses">(<span class="code"><span class="bool">true</span></span> and <span class="code"><span class="bool">false</span></span>)</span>, void <span class="parentheses">(which just means no value, meaning that a method doesn't return anything and variables cannot be of this type)</span>, and null pointers <span class="parentheses">(basically, things are stored in places in your computer's memory and "pointers" like variables work by "pointing" to the location the data is stored. Null, rather than storing nothing like void, is actually a value that can be assigned to a pointer that just tells the computer that the pointer isn't pointing at something valid.)</span>. </p>
         <p>Here is a table of all of the primitive types of c++ taken from <a target="_blank" href="https://cplusplus.com/doc/tutorial/variables/">cplusplus.com:</a></p>
         <table class="table">
           <tbody><tr><th>Group</th><th>Type names</th><th>Notes on size / precision</th></tr>
@@ -186,7 +186,7 @@
 <span class="comment">// You can also have code run a fixed number of times: </span>
 <span class="comment">// Ex. 1 </span>
 <span class="keyword">int</span> <span class="var">num_times</span> = <span class="literal">4</span>;
-<span class="keyword">while</span>(x &gt; <span class="literal">0</span>) {
+<span class="keyword">while</span>(num_times &gt;<span class="literal">0</span>) {
     intruder_present = checkForIntruder();
     <span class="keyword">if</span>(intruder_present) {
         <span class="keyword">continue</span>; <span class="comment">// Continue can be used if you want to stop the current loop but continue to the next one. </span>
@@ -241,14 +241,46 @@
 
         <h3>Functions and Methods</h3>
         <p>Functions and methods are blocks of code that can be called repeatedly without having to rewrite the entire block of code they contain.</p>
+        <p>A function is declared similarly to a variable, but instead of a value it is given a body of code to  inside curly braces, and instead of just a type to store, it is given a return type <span class="parentheses">(the type of data the function outputs when it finishes running using the <span class="code"><span class="keyword">return</span></span> keyword)</span>. If a function doesn't output anything, its return type is simply <span class="code"><span class="keyword">void</span></span>. Functions can also be given parameters, variables listed in the parentheses that the function expects to be handed whenever it's called, which it can then use inside its body. </p>
         <!--Functions Exhibit-->
-        <div class="exhibit"></div>
+        <div class="exhibit"><span class="comment">// A function that takes no parameters and returns nothing</span>
+<span class="keyword">void</span> <span class="method">printHello</span>() {
+    <span class="method">std</span>::cout &lt;&lt; <span class="string">"Hello!"</span>;
+}
+ 
+<span class="comment">// A function that takes two parameters and returns their sum</span>
+<span class="keyword">int</span> <span class="method">addTwoNumbers</span>(<span class="keyword">int</span> x, <span class="keyword">int</span> y) {
+    <span class="keyword">return</span> x + y;
+}
+
+<span class="comment">// You can then call methods by placing their names followed by parentheseswith arguments. </span>
+<span class="keyword">int</span> <span class="method">main</span>() {
+    <span class="method">printHello</span>(); <span class="comment">// calls printHello()</span>
+    <span class="keyword">int</span> <span class="var">sum</span> = <span class="method">addTwoNumbers</span>(<span class="literal">3</span>, <span class="literal">4</span>); <span class="comment">// calls addTwoNumbers() with arguments</span>
+    
+    <span class="keyword">return</span> 0;
+}
+</div>
+        <p>By default, c++ passes arguments into a function <span class="parentheses">(this is called "passing by value")</span>, meaning the function only receives a copy of whatever variable you hand it, and can't change the original no matter what it does to its own copy. If you actually want a function to be able to modify a variable you give it, you have to pass it "by reference" instead, which you do by adding an ampersand <span class="code">&amp;</span> to the type in the parameter list: </p>
+        <!--Pass By Reference Exhibit-->
+        <div class="exhibit"><span class="comment">// x here is only a copy, so the original is untouched.</span>
+<span class="keyword">void</span> <span class="method">makeZero1</span>(<span class="keyword">int</span> x) {
+    x = <span class="literal">0</span>;
+}
+ 
+<span class="comment">// x here, however, IS the original variable, instead of a copy.</span>
+<span class="keyword">void</span> <span class="method">makeZero2</span>(<span class="keyword">int</span> &amp;x) {
+    x = <span class="literal">0</span>;
+}
+</div>
+        <div class="margin-note-unlimited">Note 1: Methods and functions are basically the same thing. Methods are just function that are written in classes.</div>
+        <div class="margin-note-unlimited">Note 2: If you want to call a function before it's been fully written out further down in your file <span class="parentheses">(or defined in a separate file entirely, which you'll start doing once your projects get bigger)</span>, you need to give the compiler a function prototype, which is just the first line of the function <span class="parentheses">(its return type, name, and parameter types)</span> followed by a semicolon instead of a body, like <span class="code"><span class="keyword">int</span> <span class="method">addTwoNumbers</span>(<span class="keyword">int</span> x, <span class="keyword">int</span> y);</span>.</div>
 
 
         <h3>Classes</h3> 
         <p>Classes are essentially blueprints for instances of classes called objects. They are defined as follows:</p>
 
-        <div class="margin-note-unlimited">Fun Fact: Everything in object-orientated languages like c++, java, javascript, and python is an object! This means that, reflecting the way that you can assign a variable your own custum object type and initialize its values through <span class="code">Car <span class="var">toyota</span> = Car(<span class="literal">3</span>);</span> or <span class="code">Car <span class="var">toyota</span>(<span class="literal">3</span>);</span>, you can assign primitive types through <span class="code"><span class="keyword">int</span> <span class="var">age</span> = <span class="keyword">int</span>(<span class="literal">25</span>);</span> and <span class="code"><span class="keyword">int</span> <span class="var">age(<span class="literal">25</span>);</span></span>. Low-level languages allow you to do a lot of weird and funny notation like this, and I encourage you to look into as many stupid, complicated, and pretentious ways of writing things as you can. Surprise me!</div>
+        <div class="margin-note-unlimited">Fun Fact: Everything in object-orientated languages like c++, java, javascript, and python is an object! This means that, reflecting the way that you can assign a variable your own custom object type and initialize its values through <span class="code">Car <span class="var">toyota</span> = Car(<span class="literal">3</span>);</span> or <span class="code">Car <span class="var">toyota</span>(<span class="literal">3</span>);</span>, you can assign primitive types through <span class="code"><span class="keyword">int</span> <span class="var">age</span> = <span class="keyword">int</span>(<span class="literal">25</span>);</span> and <span class="code"><span class="keyword">int</span> <span class="var">age(<span class="literal">25</span>);</span></span>. Low-level languages allow you to do a lot of weird and funny notation like this, and I encourage you to look into as many stupid, complicated, and pretentious ways of writing things as you can. Surprise me!</div>
 
 
         <h3>Imports and Scope</h3>
