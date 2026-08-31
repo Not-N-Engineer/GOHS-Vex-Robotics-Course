@@ -71,15 +71,63 @@
         <p class="eyebrow">Module 2 · Lesson 2.3</p>
         <h1> Introduction to Git and Github </h1>
 
-        <p>    Vex robotics is one of the largest annual robotics competitions in the United States. For this club, we will be competing in the Vex V5 competition for high school and college students. Each year, in around May, they release a new game which teams will develop a robot for over the summer. </p>
+        <p><a href="https://git-scm.com/" target="_blank">Git</a> is a distributed version control system that is widely used in software development to manage changes to source code and collaborate with other developers. It allows multiple developers to work on the same project simultaneously, track changes made to the codebase, and merge changes made by different developers. In this module, we will introduce the basic concepts of Git and how to use it effectively in your projects.</p>
+ 
+        <h3>Version Control</h3>
+        <p>Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later. It allows you to revert files back to a previous state, compare changes over time, and see who last modified something that might be causing a problem.</p>
+ 
+        <h3>Distributed Version Control</h3>
+        <p>Distributed version control systems (DVCS) like Git allow each developer to have a local copy of the entire repository. This means that you can work offline, commit changes to your local repository, and then push those changes to a remote repository when you are ready to share them with others. It also allows you to pull changes from the remote repository to keep your local copy up to date.</p>
+ 
+        <h2>Important Words</h2>
+ 
+        <h3>Repository</h3>
+        <p>A repository is a collection of files and directories that are being tracked by Git. It contains the entire history of the project, including all the changes that have been made to the files over time.</p>
+ 
+        <h3>Commit</h3>
+        <p>A commit is a snapshot of the repository at a specific point in time. It records the changes that have been made to the files since the last commit and includes a message that describes the changes.</p>
+ 
+        <h3>Branch</h3>
+        <p>A branch is a parallel version of the repository that allows you to work on new features or bug fixes without affecting the main codebase. You can create a new branch, make changes to the files, and then merge those changes back into the main branch when you are ready.</p>
+ 
+        <h3>Merge</h3>
+        <p>Merging is the process of combining the changes from one branch into another. When you merge a branch, Git will automatically resolve any conflicts that arise between the changes made in the two branches.</p>
+ 
+        <h3>Pull Request</h3>
+        <p>A pull request is a request to merge changes from one branch into another. It allows other developers to review the changes, provide feedback, and approve the merge before it is merged into the main branch.</p>
+ 
+        <h2>Getting Started</h2>
+        <p>You already have Git installed from 1.1, so you can start by configuring Git with your name and email address:</p>
+ 
+        <div class="exhibit">git config --global user.name "Your Name"
+git config --global user.email "XXXX@YYY.ZZZ"</div>
+ 
+        <p>You can check your Git configuration by running:</p>
+ 
+        <div class="exhibit">git config user.name
+git config user.email</div>
+ 
+        <h3>Creating a Repository</h3>
+        <p>Before initializing a Git repository, create (or navigate to) your project directory:</p>
+ 
+        <div class="exhibit">mkdir my-project <span class="comment">// this creates a new directory called "my-project"</span>
+cd my-project    <span class="comment">// this navigates into the "my-project" directory</span></div>
+ 
+        <p>Then, create a repository on github and initialize it onto your computer. </p>
+        <div class="exhibit"><span class="comment">// Initialize the repository</span>
+git init
+<span class="comment">// Add all files to the repository</span>
+git add .
+<span class="comment">// Commit initial changes</span>
+git commit -m "initial commit"
+<span class="comment">// Add remote origin</span>
+git remote add origin repository-name
+<span class="comment">// Push changes to master</span>
+git push -u origin master
+</div>
 
-        <p>    The first, regional, Vex competitions usually start in August through Spetember, where you can qualify for the national competition. Later, state-wide competitions will be held all the way up to, in some cases, April, where you can qualify for the world-wide competition. </p>
-
-        <p>    Vex also has a variety of awards that can be won, through winning the games, writing unique code, making an innnovative design, and taking good engineering notes. Recieving these awards allows you to qualify for a higher level competition.</p>
-
-        <p>    Vex teams must design, build, and program their own robot all while taking notes on the design process to compete. Parts used must be bought from Vex's official website. </p>
-
-        <p>    For <s>somehow less information than what my friend Jack told me</s> more information, go the official <a target="_blank" href="https://www.vexrobotics.com/v5?srsltid=AfmBOooufMArBe4k3ot4bdUeC8G2POE71SEPuZj_MRt6kLkLAGNSR6lf">Vex website</a>.</p>
+        <h2>Before Next Lesson</h2>
+        <p>Go to <a href="https://learngitbranching.js.org" target="_blank">learngitbranching.org</a> to learn the basics of using git. </p>
 
         <nav class="lesson-nav" aria-label="Lesson navigation">
           <a href="lesson2-2.html">← 2.2 Introduction to C++</a>
