@@ -187,7 +187,7 @@
     font-family: var(--serif);
     font-size: 40px;
     line-height: 1.15;
-    margin: 0 0 6px 0;
+    margin: 0 0 20px 0;
   }
 
   .dek{
@@ -215,7 +215,7 @@
   main p{
     font-size: 17px;
     line-height: 1.75;
-    margin: 0 0 20px 0;
+    margin: 5 0 5px 0;
   }
 
   main li{
