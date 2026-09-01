@@ -253,8 +253,8 @@
     line-height: 1.9;
     background: var(--paper-dim);
     border-left: 3px solid var(--redline);
-    padding: 15px 15px;
-    margin: 5px 0 5px 0;
+    padding: 8px 8px;
+    margin: 0px 0 0px 0;
     white-space: pre-wrap;
   }
 

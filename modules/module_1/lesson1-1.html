@@ -83,24 +83,120 @@
             <button role="tab" aria-selected="false" aria-controls="panel-linux" id="tab-linux">Linux</button>
           </div>
         
+
+
           <div class="tab-panel active" id="panel-mac" role="tabpanel" aria-labelledby="tab-mac">
+            <h2>Package Manager</h2>
+            <p>We will need a package manager to help install neccessary software</p>
             <p>Since MacOS doesn't natively have a package manager, we will be installing <a href="https://brew.sh" target="_blank">Homebrew</a>. <br>
                To do this, open Terminal (<span class="code">Cmd + Space</span>, then type "Terminal") and paste in: </p>
             <div class="exhibit-compact">/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</div>
             <p>In the future, you will be able to use homebrew to install packaged using <span class="code">brew install &lt;package_name&gt;</span></p>
+
+            <h2>Shell</h2>
+            <p>A shell is a a program that takes commands from the keyboard and gives them to the operating system to perform. For this course, we will be using <span class="code">zsh</span> as our default shell. </p>
+            <p>Install <span class="code">zsh</span> using Homebrew: </p>
+            <div class="exhibit-compact">brew install zsh</div>
+            <p>Set <span class="code">zsh</span> as default shell: </p>
+            <div class="exhibit-compact">chsh -s $(which zsh)</div>
+            <p>Install <a href="https://ohmyz.sh" target="_blank">Oh-My-Zsh to help manage your <span class="code">zsh</span> configuration</a> </p>
+            <div class="exhibit-compact">chsh -s $(which zsh)</div>
+            <p>After installing Oh-My-Zsh, not where your <span class="code">.zshrc</span> file is <span class="parentheses">(it should be in your home directory)</span>. This is a file that is run every time a new <span class="code">zsh</span> shell is started and can be editied to tweak how your shell starts up. </p>
+
+            <h2>Git</h2>
+            <p><a href="https://git-scm.com/docs" target="_blank">Git</a> is a version control system <span class="parentheses">(something that keeps track of all your history so you can always revert a change or have backups sort of like google docs)</span> that is extremely common and well documented. It also has plenty of software build on it, like Github. For this reason, we will be using Git and Github to keep track of our code and collaborate online. If you do not have one already, you should make a GitHub account. </p>
+            <p>Check to see if you already have Git installed with <span class="code">git --version</span> and if it isn't, install Git using Homebrew: </p>
+            <div class="exhibit-compact">brew install git</div>
+
+            <h2>Visual Studio Code</h2>
+            <p>VSCode is an incredibly popular free code editor made by MicroSoft that works with MacOS, Windows, and Linux. </p>
+            <p>Install VSCode using Homebrew: </p>
+            <div class="exhibit-compact">brew install --cask visual-studio-code</div>
+            <h3>Extensions</h3>
+            <p>VSCode includes many extensions made officially or by its user-base. Open the "Extensions" tab in VSCode and install the following extensions that are needed for this course: </p>
+            <ul>
+              <li>clangd: useful for debugging c++</li>
+              <li>VEX Robotics: also useful for troubleshooting</li>
+              <li>PROS: how we will actually be programming to the robots</li>
+            </ul>
+            <div class="margin-note">IMPORTANT: When you first install PROS it will give you a popup asking to install PROS client and toolchain. This must be accepted. </div>
           </div>
         
+
+
           <div class="tab-panel" id="panel-windows" role="tabpanel" aria-labelledby="tab-windows" hidden>
-            <p>If you are using Windows, you can run Ubuntu inside Windows thanks to WSL.<br>
-               You can install WSL by running the following command in a Windows PowerShell terminal:</p>
+            <p>If you are using Windows, you can run Ubuntu inside Windows thanks to WSL. <br>
+               You can install WSL by running the following command in a Windows PowerShell terminal: </p>
             <div class="exhibit-compact" class="code">wsl --install -d Ubuntu-24.04</div>
+
+            <h2>Package Manager</h2>
+            <p>We will need a package manager to help install neccessary software</p>
             <p>Luckily, Ubuntu comes with a packe manager called <span class="code">apt</span>. <br>
                To install packages all you have to do is run <span class="code">sudo apt install &lt;package_name&gt;</span></p>
+
+            <h2>Shell</h2>
+            <p>A shell is a a program that takes commands from the keyboard and gives them to the operating system to perform. For this course, we will be using <span class="code">zsh</span> as our default shell. </p>
+            <p>Install <span class="code">zsh</span>: </p>
+            <div class="exhibit-compact">sudo apt install zsh</div>
+            <p>Set <span class="code">zsh</span> as default shell: </p>
+            <div class="exhibit-compact">chsh -s $(which zsh)</div>
+            <p>Install <a href="https://ohmyz.sh" target="_blank">Oh-My-Zsh to help manage your <span class="code">zsh</span> configuration</a> </p>
+            <div class="exhibit-compact">chsh -s $(which zsh)</div>
+            <p>After installing Oh-My-Zsh, not where your <span class="code">.zshrc</span> file is <span class="parentheses">(it should be in your home directory)</span>. This is a file that is run every time a new <span class="code">zsh</span> shell is started and can be editied to tweak how your shell starts up. </p>
+
+            <h2>Git</h2>
+            <p><a href="https://git-scm.com/docs" target="_blank">Git</a> is a version control system <span class="parentheses">(something that keeps track of all your history so you can always revert a change or have backups sort of like google docs)</span> that is extremely common and well documented. It also has plenty of software build on it, like Github. For this reason, we will be using Git and Github to keep track of our code and collaborate online. If you do not have one already, you should make a GitHub account. </p>
+            <p>Check to see if you already have Git installed with <span class="code">git --version</span> and if it isn't, install Git: </p>
+            <div class="exhibit-compact">sudo apt install git</div>
+
+            <h2>Visual Studio Code</h2>
+            <p>VSCode is an incredibly popular free code editor made by MicroSoft that works with MacOS, Windows, and Linux. </p>
+            <p>Download VSCode from <a href="https://code.visualstudio.com/Download?_exp_download=fb315fc982" target="_blank">its website</a>. </p>
+            <h3>Extensions</h3>
+            <p>VSCode includes many extensions made officially or by its user-base. Open the "Extensions" tab in VSCode and install the following extensions that are needed for this course: </p>
+            <ul>
+              <li>clangd: useful for debugging c++</li>
+              <li>VEX Robotics: also useful for troubleshooting</li>
+              <li>PROS: how we will actually be programming to the robots</li>
+            </ul>
+            <div class="margin-note">IMPORTANT: When you first install PROS it will give you a popup asking to install PROS client and toolchain. This must be accepted. </div>
           </div>
         
+
+
           <div class="tab-panel" id="panel-linux" role="tabpanel" aria-labelledby="tab-linux" hidden>
+            <h2>Package Manager</h2>
+            <p>We will need a package manager to help install neccessary software</p>
             <p>Luckily, Ubuntu comes with a packe manager called <span class="code">apt</span>. <br>
                To install packages all you have to do is run <span class="code">sudo apt install &lt;package_name&gt;</span></p>
+
+            <h2>Shell</h2>
+            <p>A shell is a a program that takes commands from the keyboard and gives them to the operating system to perform. For this course, we will be using <span class="code">zsh</span> as our default shell. </p>
+            <p>Install <span class="code">zsh</span>: </p>
+            <div class="exhibit-compact">sudo apt install zsh</div>
+            <p>Set <span class="code">zsh</span> as default shell: </p>
+            <div class="exhibit-compact">chsh -s $(which zsh)</div>
+            <p>Install <a href="https://ohmyz.sh" target="_blank">Oh-My-Zsh to help manage your <span class="code">zsh</span> configuration</a> </p>
+            <div class="exhibit-compact">chsh -s $(which zsh)</div>
+            <p>After installing Oh-My-Zsh, not where your <span class="code">.zshrc</span> file is <span class="parentheses">(it should be in your home directory)</span>. This is a file that is run every time a new <span class="code">zsh</span> shell is started and can be editied to tweak how your shell starts up. </p>
+
+            <h2>Git</h2>
+            <p><a href="https://git-scm.com/docs" target="_blank">Git</a> is a version control system <span class="parentheses">(something that keeps track of all your history so you can always revert a change or have backups sort of like google docs)</span> that is extremely common and well documented. It also has plenty of software build on it, like Github. For this reason, we will be using Git and Github to keep track of our code and collaborate online. If you do not have one already, you should make a GitHub account. </p>
+            <p>Check to see if you already have Git installed with <span class="code">git --version</span> and if it isn't, install Git: </p>
+            <div class="exhibit-compact">sudo apt install git</div>
+
+            <h2>Visual Studio Code</h2>
+            <p>VSCode is an incredibly popular free code editor made by MicroSoft that works with MacOS, Windows, and Linux. </p>
+            <p>Install VSCode: </p>
+            <div class="exhibit-compact">sudo apt install code</div>
+            <h3>Extensions</h3>
+            <p>VSCode includes many extensions made officially or by its user-base. Open the "Extensions" tab in VSCode and install the following extensions that are needed for this course: </p>
+            <ul>
+              <li>clangd: useful for debugging c++</li>
+              <li>VEX Robotics: also useful for troubleshooting</li>
+              <li>PROS: how we will actually be programming to the robots</li>
+            </ul>
+            <div class="margin-note">IMPORTANT: When you first install PROS it will give you a popup asking to install PROS client and toolchain. This must be accepted. </div>
           </div>
         </div>
 
