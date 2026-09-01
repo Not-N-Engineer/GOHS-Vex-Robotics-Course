@@ -84,19 +84,23 @@
           </div>
         
           <div class="tab-panel active" id="panel-mac" role="tabpanel" aria-labelledby="tab-mac">
-            <p>1. Open <strong>Terminal</strong> from Spotlight (<code>Cmd + Space</code>, then type "Terminal").</p>
-            <p>2. Install Homebrew by pasting this into Terminal:</p>
-            <p><span class="code">/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</span></p>
+            <p>Since MacOS doesn't natively have a package manager, we will be installing <a href="https://brew.sh" target="_blank">Homebrew</a>. <br>
+               To do this, open Terminal (<span class="code">Cmd + Space</span>, then type "Terminal") and paste in: <br>
+               <span class="code">/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</span> <br>
+               In the future, you will be able to use homebrew to install packaged using <span class="code">brew install &lt;package_name&gt;</span></p>
           </div>
         
           <div class="tab-panel" id="panel-windows" role="tabpanel" aria-labelledby="tab-windows" hidden>
-            <p>1. Download the installer from <a href="#">this link</a>.</p>
-            <p>2. Run the <span class="code">.exe</span> file and follow the setup wizard.</p>
+            <p>If you are using Windows, you can run Ubuntu inside Windows thanks to WSL.<br>
+               You can install WSL by running the following command in a Windows PowerShell terminal:<br>
+               <span class="code">wsl --install -d Ubuntu-24.04</span></p>
+            <p>Luckily, Ubuntu comes with a packe manager called <span class="code">apt</span>. <br>
+               To install packages all you have to do is run <span class="code">sudo apt install &lt;package_name&gt;</span></p>
           </div>
         
           <div class="tab-panel" id="panel-linux" role="tabpanel" aria-labelledby="tab-linux" hidden>
-            <p>1. Open a terminal and run:</p>
-            <p><span class="code">sudo apt update &amp;&amp; sudo apt install build-essential</span></p>
+            <p>Luckily, Ubuntu comes with a packe manager called <span class="code">apt</span>. <br>
+               To install packages all you have to do is run <span class="code">sudo apt install &lt;package_name&gt;</span></p>
           </div>
         </div>
 
