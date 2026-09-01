@@ -85,15 +85,15 @@
         
           <div class="tab-panel active" id="panel-mac" role="tabpanel" aria-labelledby="tab-mac">
             <p>Since MacOS doesn't natively have a package manager, we will be installing <a href="https://brew.sh" target="_blank">Homebrew</a>. <br>
-               To do this, open Terminal (<span class="code">Cmd + Space</span>, then type "Terminal") and paste in: <br>
-               <span class="code">/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</span> <br>
-               In the future, you will be able to use homebrew to install packaged using <span class="code">brew install &lt;package_name&gt;</span></p>
+               To do this, open Terminal (<span class="code">Cmd + Space</span>, then type "Terminal") and paste in: </p>
+            <div class="exhibit-compact">/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</div>
+            <p>In the future, you will be able to use homebrew to install packaged using <span class="code">brew install &lt;package_name&gt;</span></p>
           </div>
         
           <div class="tab-panel" id="panel-windows" role="tabpanel" aria-labelledby="tab-windows" hidden>
             <p>If you are using Windows, you can run Ubuntu inside Windows thanks to WSL.<br>
-               You can install WSL by running the following command in a Windows PowerShell terminal:<br>
-               <span class="code">wsl --install -d Ubuntu-24.04</span></p>
+               You can install WSL by running the following command in a Windows PowerShell terminal:</p>
+            <div class="exhibit-compact" class="code">wsl --install -d Ubuntu-24.04</div>
             <p>Luckily, Ubuntu comes with a packe manager called <span class="code">apt</span>. <br>
                To install packages all you have to do is run <span class="code">sudo apt install &lt;package_name&gt;</span></p>
           </div>
